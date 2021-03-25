@@ -10,22 +10,22 @@ else{
 	$module=$_GET[module];
 	$act=$_GET[act];
 
-	//hapus memanggil file pasiendel.php
-	if ($module=='pasien' AND $act=='hapus'){
-		mysqli_query($konek,"delete from pasien where username='$_GET[id]'");
+	//hapus memanggil file kamardel.php
+	if ($module=='kamar' AND $act=='hapus'){
+		mysqli_query($konek,"delete from kamar where username='$_GET[id]'");
 		header('location:../../home.php?module='.$module);
 	}
 
-	//input memanggil file pasiensim.php
-	elseif ($module=='pasien' AND $act=='input') {
-		mysqli_query($konek,"INSERT INTO pasien values ('$_POST[nama_lengkap]','$_POST[alamat]','$_POST[umur]')");
+	//input memanggil file kamarsim.php
+	elseif ($module=='kamar' AND $act=='input') {
+		mysqli_query($konek,"INSERT INTO kamar values ('$_POST[nama_kamar]','$_POST[tipe_kamar]','$_POST[harga]')");
 		header('location:../../home.php?module='.$module);
 	}
 
-	//update memanggil file pasieneditsim.php
-	elseif ($module=='pasien' AND $act=='update') {
-		mysqli_query($konek,"UPDATE pasien set alamat='$_POST[alamat]',umur='$_POST[umur]'
-		where nama_lengkap='$_POST[idh]'");
+	//update memanggil file kamareditsim.php
+	elseif ($module=='kamar' AND $act=='update') {
+		mysqli_query($konek,"UPDATE kamar set tipe_kamar='$_POST[tipe_kamar]',harga='$_POST[harga]'
+		where nama_kamar='$_POST[idh]'");
 		header('location:../../home.php?module='.$module);
 	}
  }

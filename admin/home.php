@@ -1,16 +1,16 @@
 <?php
-  error_reporting(0);
- include '../config/koneksi.php';
- session_start();
+ error_reporting(0);
+//  include '../config/koneksi.php';
+//  session_start();
 
-if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
-	$id = $_COOKIE['username'];
-}else if(isset($_SESSION['username']) && $_SESSION['username'] != ''){
-	$id = $_SESSION['username'];
-}else{
-	header('location: index.php');
-	exit();
-}
+// if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
+// 	$id = $_COOKIE['username'];
+// }else if(isset($_SESSION['username']) && $_SESSION['username'] != ''){
+// 	$id = $_SESSION['username'];
+// }else{
+// 	header('location: index.php');
+// 	exit();
+// }
 ?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">

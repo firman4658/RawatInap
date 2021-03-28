@@ -1,16 +1,16 @@
  <?php
-//   error_reporting(0);
-//  include '../config/koneksi.php';
-//  session_start();
+  error_reporting(0);
+ include '../config/koneksi.php';
+ session_start();
 
-// if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
-// 	$id = $_COOKIE['username'];
-// }else if(isset($_SESSION['username']) && $_SESSION['username'] != ''){
-// 	$id = $_SESSION['username'];
-// }else{
-// 	header('location: index.php');
-// 	exit();
-// }
+if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
+	$id = $_COOKIE['username'];
+}else if(isset($_SESSION['username']) && $_SESSION['username'] != ''){
+	$id = $_SESSION['username'];
+}else{
+	header('location: index.php');
+	exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,11 +57,12 @@
 
             <!-- menu profile quick info -->
             <?php
-            include 'function/user.php';
+                $query = mysqli_query($konek, "SELECT * FROM dokter WHERE username = '".$id."'");
+                $data = mysqli_fetch_array($query);
             ?>
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="build/images/dokter/<?php echo $data['foto']; ?>">
+                <img src="build/images/dokter/<?php echo $data['foto']; ?>" width='50px'>
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>

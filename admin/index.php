@@ -9,10 +9,11 @@
 		<img src="avatar.png" class="avatar">
 		<h1>Login Here</h1>
 		<form action="cek_login.php" method="post"></form>
-			<input type="text" name="Username" placeholder="Enter Username">
-			<p>Password</p>
-			<input type="Password" name="Password" placeholder="Enter Password">
-			<input type="submit" name="submit" value="Login">
+			<p>Username</p>	
+			<input type="text" name="username" placeholder="Username" required="required" />
+			<p>Password</p>	
+       		<input type="password" name="password" placeholder="Password" required="required" />    
+        	<input type="submit" name="" value="Login">
 			<a href="#">Forget Password</a>
 		</form>
 		

@@ -57,11 +57,12 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
 
             <!-- menu profile quick info -->
             <?php
-            include 'function/user.php';
+                $query = mysqli_query($konek, "SELECT * FROM dokter WHERE username = '".$id."'");
+                $data = mysqli_fetch_array($query);
             ?>
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="build/images/dokter/<?php echo $data['foto']; ?>">
+                <img src="build/images/dokter/<?php echo $data['foto']; ?>" width='50px'>
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>

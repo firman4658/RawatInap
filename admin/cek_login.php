@@ -2,7 +2,7 @@
 
 // membuat koneksi ke database
  try {
-    $koneksi = new PDO("mysql:host=localhost; port=3306; dbname=rawat", "root", "");
+    $koneksi = new PDO("mysqli:host=localhost; port=3306; dbname=rawat", "root", "");
     $koneksi->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // print("Berhasil cukk");
 } catch (PDOexception $e) {

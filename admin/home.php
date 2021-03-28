@@ -85,11 +85,8 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
                   <li><a><i class="fa fa-users"></i> Pasien</a>
                    
                   </li>
-                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="tables.html">Tables</a></li>
-                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
-                    </ul>
+                  <li><a><i class="fa fa-table"></i> Kamar </a>
+                    
                   </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">

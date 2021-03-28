@@ -2927,6 +2927,10 @@ span.right {
   text-overflow: ellipsis;
 }
 
+.footer1 h6 span {
+  color: black;
+}
+
 .sidebar-footer {
   bottom: 0px;
   clear: both;

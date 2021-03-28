@@ -85,13 +85,13 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
                   <li><a href="?module=dokter" class="nav-link"><i class="fa fa-user-md"></i> Dokter </span></a>
                    
                   </li>
-                  <li><a><i class="fa fa-users"></i> Pasien</a>
+                  <li><a href="?module=pasien" class="nav-link"><i class="fa fa-users"></i> Pasien</a>
                    
                   </li>
-                  <li><a><i class="fa fa-table"></i> Kamar </a>
+                  <li><a href="?module=kamar" class="nav-link"><i class="fa fa-table"></i> Kamar </a>
                   </li>
 
-                  <li><a><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Pembayaran </a>
+                  <li><a href="?module=pembayaran" class="nav-link"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Pembayaran </a>
                   </li>
                            </div>
 
@@ -204,8 +204,8 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
 
         <!-- footer content -->
         <footer>
-          <div class="pull-left">
-            <h6>Pelayanan Rawat Inap By <a href="#">Kelompok 11</a></h6>
+          <div class="footer1 pull-left">
+            <h6>Pelayanan Rawat Inap By <span color:black>Kelompok 11</span></h6>
           </div>
           <div class="clearfix"></div>
         </footer>

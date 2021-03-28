@@ -1,17 +1,17 @@
-<!-- <?php
-  error_reporting(0);
- include '../config/koneksi.php';
- session_start();
+ <?php
+//   error_reporting(0);
+//  include '../config/koneksi.php';
+//  session_start();
 
-if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
-	$id = $_COOKIE['username'];
-}else if(isset($_SESSION['username']) && $_SESSION['username'] != ''){
-	$id = $_SESSION['username'];
-}else{
-	header('location: index.php');
-	exit();
-}
-?>  -->
+// if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
+// 	$id = $_COOKIE['username'];
+// }else if(isset($_SESSION['username']) && $_SESSION['username'] != ''){
+// 	$id = $_SESSION['username'];
+// }else{
+// 	header('location: index.php');
+// 	exit();
+// }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,7 +22,7 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Gentelella Alela! | </title>
+    <title>Rawat Inap | 11 </title>
 
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -65,7 +65,7 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2><?php echo $data['nama_lengkap']; ?></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->

@@ -1116,9 +1116,8 @@
 }
 
 .site_title i {
-	border: 1px solid #EAEAEA;
-	padding: 5px 6px;
-	border-radius: 50%
+
+	padding: 6px 6px 6px;
 }
 
 .nav-sm .main_container .top_nav {
@@ -1206,7 +1205,8 @@
 
 .profile_pic {
 	width: 35%;
-	float: left
+	float: left;
+	padding: 20px;
 }
 
 .img-circle.profile_img {

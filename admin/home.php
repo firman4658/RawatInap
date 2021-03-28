@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
   error_reporting(0);
  include '../config/koneksi.php';
  session_start();
@@ -11,7 +11,7 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
 	header('location: index.php');
 	exit();
 }
-?>
+?>  -->
 <!DOCTYPE html>
 <html lang="en">
   <head>

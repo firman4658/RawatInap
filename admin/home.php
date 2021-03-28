@@ -59,6 +59,8 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
             <?php
                 $query = mysqli_query($konek, "SELECT * FROM dokter WHERE username = '".$id."'");
                 $data = mysqli_fetch_array($query);
+                // menghitung data dokter
+               
             ?>
             <div class="profile clearfix">
               <div class="profile_pic">
@@ -66,7 +68,7 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2><?php echo $data['nama_lengkap']; ?></h2>
+                <h2 font-size='24px'><?php echo $data['nama_lengkap']; ?></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -80,7 +82,7 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Home</a>
                   </li>
-                  <li><a><i class="fa fa-user-md"></i> Dokter </span></a>
+                  <li><a href="?module=dokter" class="nav-link"><i class="fa fa-user-md"></i> Dokter </span></a>
                    
                   </li>
                   <li><a><i class="fa fa-users"></i> Pasien</a>
@@ -112,7 +114,7 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
+                  <img src="build/images/dokter/<?php echo $data['foto']; ?>"><?php echo $data['nama_lengkap']; ?>
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item"  href="javascript:;"> Profile</a>
@@ -142,14 +144,22 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
           <div class="row" style="display: inline-block;" >
           <div class="tile_count">
             <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
-              <div class="count">2500</div>
-              <span class="count_bottom"><i class="green">4% </i> From last Week</span>
+              <span class="count_top"><i class="fa fa-user-md fa-2x"></i> Jumlah Dokter</span>
+              <div class="count">
+              <?php
+                  $data2 = mysqli_query($konek,"SELECT * FROM dokter");
+                  $jmlh_dokter = mysqli_num_rows($data2);
+                  echo $jmlh_dokter;?>
+              </div>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-clock-o"></i> Average Time</span>
-              <div class="count">123.50</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+              <span class="count_top"><i class="fa fa-users fa-2x"></i> Jumlah Pasien</span>
+              <div class="count">
+              <?php
+                  $data2 = mysqli_query($konek,"SELECT * FROM pasien");
+                  $jmlh_pasien = mysqli_num_rows($data2);
+                  echo $jmlh_pasien;?>
+              </div>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
@@ -178,12 +188,11 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
           <div class="row">
             <div class="col-md-12 col-sm-12 ">
               <div class="dashboard_graph">
-                   
-
-
-
-
-
+              <div class="table-responsive">
+                  <?php
+                  include'content.php';
+                  ?>
+              </div>
                   </div>
                 </div>
               </div>
@@ -196,7 +205,7 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
         <!-- footer content -->
         <footer>
           <div class="pull-left">
-            Pelayanan Rawat Inap By <a href="#">Kelompok 11</a>
+            <h6>Pelayanan Rawat Inap By <a href="#">Kelompok 11</a></h6>
           </div>
           <div class="clearfix"></div>
         </footer>

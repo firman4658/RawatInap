@@ -89,7 +89,7 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
                   <li><a><i class="fa fa-table"></i> Kamar </a>
                   </li>
 
-                  <li><a><i class="fa fa-cash-register"></i> Pembayaran </a>
+                  <li><a><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Pembayaran </a>
                   </li>
                            </div>
 

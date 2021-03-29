@@ -93,7 +93,8 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
 
                   <li><a href="?module=pembayaran" class="nav-link"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Pembayaran </a>
                   </li>
-                           </div>
+                           
+                </div>
 
             </div>
             <!-- /sidebar menu -->
@@ -162,14 +163,22 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
               </div>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
-              <div class="count green">2,500</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+              <span class="count_top"><i class="fa fa-bed fa-2x"></i> Total Kamar</span>
+              <div class="count">
+              <?php
+                  $data3 = mysqli_query($konek,"SELECT * FROM kamar");
+                  $jmlh_kamar = mysqli_num_rows($data3);
+                  echo $jmlh_kamar;?>
+              </div>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Females</span>
-              <div class="count">4,567</div>
-              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
+              <span class="count_top"><i class="fa fa-credit-card-alt fa-2x"></i> Total Transaksi</span>
+              <div class="count">
+              <?php
+                  $data4 = mysqli_query($konek,"SELECT * FROM pembayaran");
+                  $jmlh_pembayaran = mysqli_num_rows($data4);
+                  echo $jmlh_pembayaran;?>
+              </div>
             </div>
             <div class="col-md-2 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Total Collections</span>

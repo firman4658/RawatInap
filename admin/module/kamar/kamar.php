@@ -1,5 +1,5 @@
 <?php
-$aksi="module/admin/aksi_kamar.php";
+$aksi="module/kamar/aksi_kamar.php";
 
 	switch($_GET[act])
 	{

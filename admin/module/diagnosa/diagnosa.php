@@ -67,8 +67,8 @@ $aksi="module/diagnosa/aksi_diagnosa.php";
 				<tr>
 					<td></td>
 					<td>
-						<input class='btn btn-default' type=submit name=simpan value='Kirim'>
-						<input class='btn btn-default' type=reset name=batal value='Batal'>
+						<input class='btn btn-success' type=submit name=simpan value='Kirim'>
+						<input class='btn btn-danger' type=reset name=batal value='Batal'>
 					</td>
 				</tr>
 			</table>
@@ -86,8 +86,8 @@ $aksi="module/diagnosa/aksi_diagnosa.php";
 				<tr>
 					<tdID Diagnosa</td> 
 					<td>
-						<input type=text name=id_diagnosa value='$r[id_diagnosa]' disabled>
-						<input type=hidden name='idh' value='$r[id_diagnosa]'>
+						<input class='form-control' type=text name=id_diagnosa value='$r[id_diagnosa]' disabled>
+						<input class='form-control' type=hidden name='idh' value='$r[id_diagnosa]'>
 					</td>
 				</tr>
                 <tr>
@@ -102,13 +102,13 @@ $aksi="module/diagnosa/aksi_diagnosa.php";
                 </td>
                 </tr>
                 <tr>
-                <td>Diagnosa</td> <td><input  class='form-control' type=text name=diagnosa></td>
+                <td>Diagnosa</td> <td><input  class='form-control' type=text name=diagnosa value=$r[diagnosa]></td>
                 </tr>
                 <tr>
-                    <td>Penyakit</td> <td><input  class='form-control' type=text name=penyakit></td>
+                    <td>Penyakit</td> <td><input  class='form-control' type=text name=penyakit value=$r[penyakit]></td>
                 </tr>
                 <tr>
-                    <td>Tindakan</td> <td><input  class='form-control' type=text name=tindakan></td>
+                    <td>Tindakan</td> <td><input  class='form-control' type=text name=tindakan value=$r[tindakan]></td>
                 </tr>
                 <tr>
                 <td>Nama kamar</td> 
@@ -124,8 +124,8 @@ $aksi="module/diagnosa/aksi_diagnosa.php";
 				<tr>
 					<td></td> 
 					<td>
-						<input type=submit class='btn btn-default' name=simpan value='Update'>
-						<input type=reset class='btn btn-default' name=batal value='Batal'>
+						<input type=submit class='btn btn-success' name=simpan value='Update'>
+						<input type=reset class='btn btn-danger' name=batal value='Batal'>
 					</td>
 				</tr>
 			</table>

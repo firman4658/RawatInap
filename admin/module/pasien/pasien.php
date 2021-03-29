@@ -45,8 +45,8 @@ $aksi="module/pasien/aksi_pasien.php";
 				<tr>
 					<td></td>
 					<td>
-						<input class='btn btn-default' type=submit name=simpan value='Kirim'>
-						<input class='btn btn-default' type=reset name=batal value='Batal'>
+						<input class='btn btn-success' type=submit name=simpan value='Kirim'>
+						<input class='btn btn-danger' type=reset name=batal value='Batal'>
 					</td>
 				</tr>
 			</table>
@@ -64,21 +64,21 @@ $aksi="module/pasien/aksi_pasien.php";
 				<tr>
 					<td>Nama Pasien</td> 
 					<td>
-						<input type=text name=nama_pasien value='$r[nama_pasien]' disabled>
-						<input type=hidden name='idh' value='$r[nama_pasien]'>
+						<input class='form-control' type=text name=nama_pasien value='$r[nama_pasien]' disabled>
+						<input class='form-control' type=hidden name='idh' value='$r[nama_pasien]'>
 					</td>
 				</tr>
             <tr>
-				<td>Alamat</td> <td><input  class='form-control' type=text name=alamat></td>
+				<td>Alamat</td> <td><input  class='form-control' type=text name=alamat value=$r[alamat]></td>
 			</tr>
 			<tr>
-				<td>Umur</td> <td><input  class='form-control' type=text name=umur></td>
+				<td>Umur</td> <td><input  class='form-control' type=text name=umur value=$r[umur]></td>
 			</tr>
 				<tr>
 					<td></td> 
 					<td>
-						<input type=submit class='btn btn-default' name=simpan value='Update'>
-						<input type=reset class='btn btn-default' name=batal value='Batal'>
+						<input type=submit class='btn btn-success' name=simpan value='Update'>
+						<input type=reset class='btn btn-danger' name=batal value='Batal'>
 					</td>
 				</tr>
 			</table>

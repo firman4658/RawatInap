@@ -57,8 +57,8 @@ $aksi="module/dokter/aksi_dokter.php";
 				<tr>
 					<td></td>
 					<td>
-						<input class='btn btn-default' type=submit name=simpan value='Kirim'>
-						<input class='btn btn-default' type=reset name=batal value='Batal'>
+						<input class='btn btn-success' type=submit name=simpan value='Kirim'>
+						<input class='btn btn-danger' type=reset name=batal value='Batal'>
 					</td>
 				</tr>
 			</table>
@@ -76,33 +76,33 @@ $aksi="module/dokter/aksi_dokter.php";
 				<tr>
 					<td>Username</td> 
 					<td>
-						<input type=text name=username value='$r[username]' disabled>
-						<input type=hidden name='idh' value='$r[username]'>
+						<input class='form-control' type=text name=username value='$r[username]' disabled>
+						<input class='form-control' type=hidden name='idh' value='$r[username]'>
 					</td>
 				</tr>
 				<tr>
 				<td>Nama Lengkap</td> <td><input  class='form-control' type=text name='nama_lengkap' value=$r[nama_lengkap]></td>
 			</tr>
             <tr>
-				<td>Alamat</td> <td><input  class='form-control' type=text name=alamat></td>
+				<td>Alamat</td> <td><input  class='form-control' type=text name=alamat value=$r[alamat]></td>
 			</tr>
 			<tr>
-				<td>Password</td> <td><input class='form-control' type=password name=password></td>
+				<td>Password</td> <td><input class='form-control' type=password name=password value=$r[password]></td>
 			</tr>
             <tr>
-				<td>Foto</td> <td> <input  class='btn btn-default' type=file name=foto> 
+				<td>Foto</td> <td> <input  class='btn btn-default' type=file name=foto value=$r[foto]> 
 			</td>
 			<tr>
-				<td>Spesialis</td> <td><input  class='form-control' type=text name=spesialis></td>
+				<td>Spesialis</td> <td><input  class='form-control' type=text name=spesialis value=$r[spesialis]></td>
 			</tr>
 			<tr>
-				<td>Kontak</td> <td><input  class='form-control' type=text name=kontak></td>
+				<td>Kontak</td> <td><input  class='form-control' type=text name=kontak value=$r[kontak]></td>
 			</tr>
 				<tr>
 					<td></td> 
 					<td>
-						<input type=submit class='btn btn-default' name=simpan value='Update'>
-						<input type=reset class='btn btn-default' name=batal value='Batal'>
+						<input type=submit class='btn btn-success' name=simpan value='Update'>
+						<input type=reset class='btn btn-danger' name=batal value='Batal'>
 					</td>
 				</tr>
 			</table>

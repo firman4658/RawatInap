@@ -68,8 +68,8 @@ $aksi="module/kamar/aksi_kamar.php";
 				<tr>
 					<td>Nama Kamar</td> 
 					<td>
-						<input type=text name=nama_kamar value='$r[nama_kamar]' disabled>
-						<input type=hidden name='idh' value='$r[nama_kamar]'>
+						<input class='form-control' type=text name=nama_kamar value='$r[nama_kamar]' disabled>
+						<input class='form-control' type=hidden name='idh' value='$r[nama_kamar]'>
 					</td>
 				</tr>
 				<tr>
@@ -80,12 +80,12 @@ $aksi="module/kamar/aksi_kamar.php";
 				</td>
 				</tr>
 			<tr>
-				<td>Harga</td> <td><input  class='form-control' type=text name=harga></td>
+				<td>Harga</td> <td><input  class='form-control' type=text name=harga value=$r[harga]></td>
 			</tr>
 				<tr>
 					<td></td> 
 					<td>
-						<input type=submit class='btn btn-default' name=simpan value='Update'>
+						<input type=submit class='btn btn-sussces' name=simpan value='Update'>
 						<input type=reset class='btn btn-default' name=batal value='Batal'>
 					</td>
 				</tr>

@@ -7,7 +7,7 @@ $aksi="module/admin/aksi_pasien.php";
 	default:
 		// Tampil Data - mengambil file adminshow.php
 		echo"<a href='?module=pasien&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle' ></i> Tambah</a>
-		 <table id='rawat' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
+		<table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
 				<th>NO</th> <th>Nama Pasien</th> <th>Alamat</th> <th>Umur</th> <th>Aksi</th>
@@ -21,8 +21,8 @@ $aksi="module/admin/aksi_pasien.php";
 		echo"<tr>
 				<td>$no</td> <td>$r[nama_pasien]</td> <td>$r[alamat]</td> <td>$r[umur]</td>
 				<td> 
-					<a href='?module=pasien&act=edituser&id=$r[nama_pasien]'> <img src='edit.png' width=20px> </a> | 
-					<a href='$aksi?module=pasien&act=hapus&id=$r[nama_pasien]'> <img src='hapus.png' width=20px> </a>
+					<a href='?module=pasien&act=edituser&id=$r[nama_pasien]'> <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i> </a> | 
+					<a href='$aksi?module=pasien&act=hapus&id=$r[nama_pasien]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>
 				</td>
 			</tr>";
 			}

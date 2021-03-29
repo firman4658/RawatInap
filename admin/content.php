@@ -12,5 +12,9 @@
 	{
 		include "module/pasien/pasien.php";
 	}
+	elseif ($_GET['module']=='kamar') 
+	{
+		include "module/kamar/kamar.php";
+	}
 
 ?>

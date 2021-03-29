@@ -7,7 +7,7 @@ $aksi="module/admin/aksi_kamar.php";
 	default:
 		// Tampil Data - mengambil file kamarshow.php
 		echo"<a href='?module=kamar&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle' ></i> Tambah</a>
-		 <table id='rawat' class='table table-striped table-bordered 'cellspacing='0' width='150%'>
+		<table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
 				<th>NO</th> <th>Nama kamar</th> <th>Tipe Kamar</th> <th>Harga</th> <th>Aksi</th>
@@ -21,8 +21,8 @@ $aksi="module/admin/aksi_kamar.php";
 		echo"<tr>
 				<td>$no</td> <td>$r[nama_kamar]</td> <td>$r[tipe_kamar]</td> <td>$r[harga]</td>
 				<td> 
-					<a href='?module=kamar&act=edituser&id=$r[nama_kamar]'> <img src='edit.png' width=20px> </a> | 
-					<a href='$aksi?module=kamar&act=hapus&id=$r[nama_kamar]'> <img src='hapus.png' width=20px> </a>
+					<a href='?module=kamar&act=edituser&id=$r[nama_kamar]'> <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i> </a> | 
+					<a href='$aksi?module=kamar&act=hapus&id=$r[nama_kamar]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>
 				</td>
 			</tr>";
 			}

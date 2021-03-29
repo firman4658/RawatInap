@@ -21,8 +21,8 @@ $aksi="module/kamar/aksi_kamar.php";
 		echo"<tr>
 				<td>$no</td> <td>$r[nama_kamar]</td> <td>$r[tipe_kamar]</td> <td>$r[harga]</td>
 				<td> 
-					<a href='?module=kamar&act=edituser&id=$r[nama_kamar]'> <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i> </a> | 
-					<a href='$aksi?module=kamar&act=hapus&id=$r[nama_kamar]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>
+					<a href='?module=kamar&act=edituser&id=$r[id_kamar]'> <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i> </a> | 
+					<a href='$aksi?module=kamar&act=hapus&id=$r[id_kamar]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>
 				</td>
 			</tr>";
 			}
@@ -39,8 +39,9 @@ $aksi="module/kamar/aksi_kamar.php";
 				<tr>
 				<td>Tipe Kamar</td>
 				<td>
-					<input type=radio name=ukuran value=VIP checked>VIP
-					<input type=radio name=ukuran value=Reguler checked>Reguler
+					<input type=radio name=tipe_kamar value=VIP checked>VIP
+					<input type=radio name=tipe_kamar value=Reguler checked>Reguler
+					
 				</td>
 				</tr>
 				<tr>
@@ -49,8 +50,8 @@ $aksi="module/kamar/aksi_kamar.php";
 				<tr>
 					<td></td>
 					<td>
-						<input class='btn btn-default' type=submit name=simpan value='Kirim'>
-						<input class='btn btn-default' type=reset name=batal value='Batal'>
+						<input class='btn btn-success' type=submit name=simpan value='Kirim'>
+						<input class='btn btn-danger' type=reset name=batal value='Batal'>
 					</td>
 				</tr>
 			</table>
@@ -60,7 +61,7 @@ $aksi="module/kamar/aksi_kamar.php";
 	// Edit Data - memanggil file kamareditfm.php
 	case "edituser":
 		
-			$data = mysqli_query($konek,"SELECT * FROM kamar where nama_kamar='$_GET[id]'");
+			$data = mysqli_query($konek,"SELECT * FROM kamar where id_kamar='$_GET[id]'");
 			$r = mysqli_fetch_array($data);
 				
 		echo"<form action='$aksi?module=kamar&act=update' method='POST'>
@@ -75,8 +76,8 @@ $aksi="module/kamar/aksi_kamar.php";
 				<tr>
 				<td>Tipe Kamar</td>
 				<td>
-					<input type=radio name=ukuran value=VIP checked>VIP
-					<input type=radio name=ukuran value=Reguler checked>Reguler
+					<input type=radio name=tipe_kamar value=VIP checked>VIP
+					<input type=radio name=tipe_kamar value=Reguler checked>Reguler
 				</td>
 				</tr>
 			<tr>
@@ -85,8 +86,8 @@ $aksi="module/kamar/aksi_kamar.php";
 				<tr>
 					<td></td> 
 					<td>
-						<input type=submit class='btn btn-sussces' name=simpan value='Update'>
-						<input type=reset class='btn btn-default' name=batal value='Batal'>
+						<input type=submit class='btn btn-success' name=simpan value='Update'>
+						<input type=reset class='btn btn-danger' name=batal value='Batal'>
 					</td>
 				</tr>
 			</table>

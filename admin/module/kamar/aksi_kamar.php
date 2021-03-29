@@ -12,13 +12,13 @@ else{
 
 	//hapus memanggil file kamardel.php
 	if ($module=='kamar' AND $act=='hapus'){
-		mysqli_query($konek,"delete from kamar where username='$_GET[id]'");
+		mysqli_query($konek,"delete from kamar where id_kamar='$_GET[id]'");
 		header('location:../../home.php?module='.$module);
 	}
 
 	//input memanggil file kamarsim.php
 	elseif ($module=='kamar' AND $act=='input') {
-		mysqli_query($konek,"INSERT INTO kamar values ('$_POST[nama_kamar]','$_POST[tipe_kamar]','$_POST[harga]')");
+		mysqli_query($konek,"INSERT INTO kamar values ('$_POST[id_kamar]','$_POST[nama_kamar]','$_POST[tipe_kamar]','$_POST[harga]')");
 		header('location:../../home.php?module='.$module);
 	}
 

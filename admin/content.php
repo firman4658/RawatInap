@@ -16,5 +16,9 @@
 	{
 		include "module/kamar/kamar.php";
 	}
+	elseif ($_GET['module']=='diagnosa') 
+	{
+		include "module/diagnosa/diagnosa.php";
+	}
 
 ?>

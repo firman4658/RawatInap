@@ -21,8 +21,8 @@ $aksi="module/pasien/aksi_pasien.php";
 		echo"<tr>
 				<td>$no</td> <td>$r[nama_pasien]</td> <td>$r[alamat]</td> <td>$r[umur]</td>
 				<td> 
-					<a href='?module=pasien&act=edituser&id=$r[nama_pasien]'> <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i> </a> | 
-					<a href='$aksi?module=pasien&act=hapus&id=$r[nama_pasien]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>
+					<a href='?module=pasien&act=edituser&id=$r[id_pasien]'> <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i> </a> | 
+					<a href='$aksi?module=pasien&act=hapus&id=$r[id_pasien]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>
 				</td>
 			</tr>";
 			}

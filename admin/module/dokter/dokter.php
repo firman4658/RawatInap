@@ -1,5 +1,5 @@
 <?php
-$aksi="module/admin/aksi_dokter.php";
+$aksi="module/dokter/aksi_dokter.php";
 
 	switch($_GET[act])
 	{
@@ -37,7 +37,7 @@ $aksi="module/admin/aksi_dokter.php";
 					<td>Username</td> <td><input class='form-control' type=text name=username></td>
 				</tr>
 				<tr>
-					<td>Nama Lengkap</td> <td><input  class='form-control' type=text name=nm_lengkap></td>
+					<td>Nama Lengkap</td> <td><input  class='form-control' type=text name=nama_lengkap></td>
 				</tr>
                 <tr>
 					<td>Alamat</td> <td><input  class='form-control' type=text name=alamat></td>
@@ -81,7 +81,7 @@ $aksi="module/admin/aksi_dokter.php";
 					</td>
 				</tr>
 				<tr>
-				<td>Nama Lengkap</td> <td><input  class='form-control' type=text name=nm_lengkap></td>
+				<td>Nama Lengkap</td> <td><input  class='form-control' type=text name='nama_lengkap' value=$r[nama_lengkap]></td>
 			</tr>
             <tr>
 				<td>Alamat</td> <td><input  class='form-control' type=text name=alamat></td>

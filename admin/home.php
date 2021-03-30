@@ -66,11 +66,10 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
             <div class="profile clearfix">
                <div class="profile_pic">
                 <img src="build/images/dokter/<?php echo $data['foto']; ?>" width='140px' >
+                <p>Welcome,</p>
+                <p font-size='24px'><?php echo $data['nama_lengkap']; ?></p>
                 </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2 font-size='24px'><?php echo $data['nama_lengkap']; ?></h2>
-              </div>
+             
             </div>
             <!-- /menu profile quick info -->
 

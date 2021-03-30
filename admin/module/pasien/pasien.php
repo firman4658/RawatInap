@@ -7,7 +7,7 @@ $aksi="module/pasien/aksi_pasien.php";
 	default:
 		// Tampil Data - mengambil file adminshow.php
 		echo"<a href='?module=pasien&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg'></i> Tambah</a>
-		<table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='150%'>
+		<table cellpadding='40px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='140%'>
 		 <thead>
 			<tr>
 				<th>NO</th> <th>Nama Pasien</th> <th>Alamat</th> <th>Umur</th> <th>Jenis Kelamin</th> <th>pekerjaan</th> <th>Status</th> <th>Agama</th> <th>Telepon</th> <th>Tanggal lahir</th> <th>Tanggal daftar</th><th>No Rekam medis</th> <th>pilihan</th>

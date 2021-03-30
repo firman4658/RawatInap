@@ -7,7 +7,7 @@ $aksi="module/dokter/aksi_dokter.php";
 	default:
 		// Tampil Data - mengambil file adminshow.php
 		echo"<a href='?module=dokter&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg' ></i> Tambah</a>
-		 <table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='150%'>
+		 <table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='110%'>
 		 <thead>
 			<tr>
 				<th>NO</th> <th>Username</th> <th>Nama Lengkap</th> <th>Alamat</th> <th>Password</th> <th>Foto</th> <th>Spesialis</th> <th>Kontak</th> <th>Aksi</th>

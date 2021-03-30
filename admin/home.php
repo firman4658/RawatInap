@@ -64,9 +64,9 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
                
             ?>
             <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="build/images/dokter/<?php echo $data['foto']; ?>" width='50px' >
-              </div>
+               <div class="profile_pic">
+                <img src="build/images/dokter/<?php echo $data['foto']; ?>" width='140px' >
+                </div>
               <div class="profile_info">
                 <span>Welcome,</span>
                 <h2 font-size='24px'><?php echo $data['nama_lengkap']; ?></h2>
@@ -269,13 +269,9 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
     <script src="build/js/jquery.dataTables.min.js"></script>
     <script src="build/js/dataTables.bootstrap.min.js"></script>
     <script>
-      $(document).ready(function() {
-        $('#rawat').DataTable( {
-        
-            "scrollY": 200,
-        
-        } );
-    } );
+     $(document).ready(function() {
+    $('#rawat').DataTable();
+      } );
     </script>
   </body>
 </html>

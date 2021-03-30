@@ -1228,9 +1228,8 @@
 }
 
 .profile_info {
-  padding: 120px 10px 10px !important;
+  padding: 10px;
   width: 65%;
-  float: left;
 }
 
 .profile_info span {

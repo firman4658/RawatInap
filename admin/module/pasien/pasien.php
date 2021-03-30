@@ -6,11 +6,11 @@ $aksi="module/pasien/aksi_pasien.php";
 
 	default:
 		// Tampil Data - mengambil file adminshow.php
-		echo"<a href='?module=pasien&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle' ></i> Tambah</a>
+		echo"<a href='?module=pasien&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg'></i> Tambah</a>
 		<table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
-				<th>NO</th> <th>Nama Pasien</th> <th>Alamat</th> <th>Umur</th> <th>Aksi</th>
+				<th>NO</th> <th>Nama Pasien</th> <th>Alamat</th> <th>Umur</th> <th>Jenis Kelamin</th> <th>pekerjaan</th> <th>Status</th> <th>Agama</th> <th>Telepon</th> <th>Tanggal lahir</th> <th>Tanggal daftar</th><th>No Rekam medis</th> <th>pilihan</th>
 			</tr></thead>";
 			$no=0;
 			
@@ -19,7 +19,7 @@ $aksi="module/pasien/aksi_pasien.php";
 			{
 				$no++;
 		echo"<tr>
-				<td>$no</td> <td>$r[nama_pasien]</td> <td>$r[alamat]</td> <td>$r[umur]</td>
+				<td>$no</td> <td>$r[nama_pasien]</td> <td>$r[alamat]</td> <td>$r[umur]</td> <td>$r[jenis_kelamin]</td> <td>$r[pekerjaan]</td> <td>$r[status]</td> <td>$r[agama]</td> <td>$r[tlpn]</td> <td>$r[ttlahir]</td> <td>$r[tgl_daftar]</td> <td>$r[no_rekam]</td>
 				<td> 
 					<a href='?module=pasien&act=edituser&id=$r[id_pasien]'> <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i> </a> | 
 					<a href='$aksi?module=pasien&act=hapus&id=$r[id_pasien]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>

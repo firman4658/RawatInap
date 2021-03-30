@@ -6,7 +6,7 @@ $aksi="module/diagnosa/aksi_diagnosa.php";
 
 	default:
 		// Tampil Data - mengambil file adminshow.php
-		echo"<a href='?module=diagnosa&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle' ></i> Tambah</a>
+		echo"<a href='?module=diagnosa&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg'></i> Tambah</a>
 		<table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='150%'>
 		 <thead>
 			<tr>

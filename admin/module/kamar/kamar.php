@@ -6,11 +6,11 @@ $aksi="module/kamar/aksi_kamar.php";
 
 	default:
 		// Tampil Data - mengambil file kamarshow.php
-		echo"<a href='?module=kamar&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle' ></i> Tambah</a>
+		echo"<a href='?module=kamar&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg'></i> Tambah</a>
 		<table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
-				<th>NO</th> <th>Nama kamar</th> <th>Tipe Kamar</th> <th>Harga</th> <th>Aksi</th>
+				<th>NO</th> <th>Kode Kamar</th> <th>Nama Kamar</th> <th>Tipe Kamar</th> <th>Harga</th> <th>Aksi</th>
 			</tr></thead>";
 			$no=0;
 			
@@ -19,7 +19,7 @@ $aksi="module/kamar/aksi_kamar.php";
 			{
 				$no++;
 		echo"<tr>
-				<td>$no</td> <td>$r[nama_kamar]</td> <td>$r[tipe_kamar]</td> <td>$r[harga]</td>
+				<td>$no</td> <td>$r[id_kamar]</td> <td>$r[nama_kamar]</td> <td>$r[tipe_kamar]</td> <td>$r[harga]</td>
 				<td> 
 					<a href='?module=kamar&act=edituser&id=$r[id_kamar]'> <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i> </a> | 
 					<a href='$aksi?module=kamar&act=hapus&id=$r[id_kamar]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>

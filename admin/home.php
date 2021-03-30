@@ -42,6 +42,7 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
 
     <!-- Custom Theme Style -->
     <link href="build/css/custom.min.css" rel="stylesheet">
+    <link href="build/css/dataTables.bootstrap.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -265,6 +266,16 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
 
     <!-- Custom Theme Scripts -->
     <script src="build/js/custom.min.js"></script>
-	
+    <script src="build/js/jquery.dataTables.min.js"></script>
+    <script src="build/js/dataTables.bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#rawat').DataTable( {
+        
+            "scrollY": 200,
+        
+        } );
+    } );
+    </script>
   </body>
 </html>

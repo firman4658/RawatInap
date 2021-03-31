@@ -1211,6 +1211,10 @@
   float: left;
 }
 
+.profile_pic img {
+  width: 100px;
+}
+
 .img-circle.profile_img {
   width: 70%;
   background: #fff;

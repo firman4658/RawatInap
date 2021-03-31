@@ -4,6 +4,10 @@
 	}
 
 	//bagian dokter
+	elseif ($_GET['module']=='admin') 
+	{
+		include "module/admin/admin.php";
+	}
 	elseif ($_GET['module']=='dokter') 
 	{
 		include "module/dokter/dokter.php";

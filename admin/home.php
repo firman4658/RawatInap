@@ -43,6 +43,7 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
     <!-- Custom Theme Style -->
     <link href="build/css/custom.min.css" rel="stylesheet">
     <link href="build/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="build/css/styleku.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -64,8 +65,10 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
                
             ?>
             <div class="profile clearfix">
-               <div class="profile_pic">
-                <img src="build/images/dokter/<?php echo $data['foto']; ?>" width='150px' >
+               <div class="profilnav">
+                <img src="build/images/dokter/<?php echo $data['foto']; ?>"  >
+
+
                 <h2>Welcome,</h2>
                 <h2><?php echo $data['nama_lengkap']; ?></h2>
                 </div>

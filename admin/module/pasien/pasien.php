@@ -32,7 +32,7 @@ $aksi="module/pasien/aksi_pasien.php";
 	// Tambah Data - memanggil file pasienfm.php
 	case "tambahuser":
 		echo"<form action='$aksi?module=pasien&act=input' method='POST'>
-			<table class='table table-striped table-bordered'>
+			<table class='table table-striped table-bordered' >
 				<tr>
 					<td>Nama Pasien</td> <td><input class='form-control' type=text name=nama_pasien></td>
 				</tr>
@@ -41,6 +41,33 @@ $aksi="module/pasien/aksi_pasien.php";
 				</tr>
 				<tr>
 					<td>Umur</td> <td><input  class='form-control' type=text name=umur></td>
+				</tr>
+				<tr>
+					<td>Jenis Kelamin</td> <td><input  class='form-control' type=text name=jenis_kelamin></td>
+				</tr>
+				<tr>
+				<td>Pekerjaan</td> <td><input  class='form-control' type=text name=pekerjaan></td>
+				</tr>
+				<tr>
+						<td>Status</td> <td><input  class='form-control' type=text name=status></td>
+				</tr>
+				<tr>
+						<td>Agama</td> <td><input  class='form-control' type=text name=agama></td>
+				</tr>
+				<tr>
+						<td>Telepon</td> <td><input  class='form-control' type=text name=tlpn></td>
+				</tr>
+				<tr>
+						<td>Tanggal Lahir</td> <td><input  class='form-control' type=text name=ttlahir></td>
+				</tr>
+				<tr>
+						<td>Tanggal daftar</td> <td><input  class='form-control' type=text name=tgl_daftar></td>
+				</tr>
+				<tr>
+						<td>No Rekam medis</td> <td><input  class='form-control' type=text name=no_rekam></td>
+				</tr>
+				<tr>
+						<td>Asuransi</td> <td><input  class='form-control' type=text name=asuransi></td>
 				</tr>
 				<tr>
 					<td></td>

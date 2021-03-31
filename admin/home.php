@@ -20,9 +20,9 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+	  <link rel="icon" href="build/images/logonobg.png" type="image/ico" />
 
-    <title>Rawat Inap | 11 </title>
+    <title>Rawat Inap | Kelompok 11 </title>
 
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -43,7 +43,6 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
     <!-- Custom Theme Style -->
     <link href="build/css/custom.min.css" rel="stylesheet">
     <link href="build/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="build/css/styleku.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -65,12 +64,12 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
                
             ?>
             <div class="profile clearfix">
-               <div class="profilnav">
-                <img src="build/images/dokter/<?php echo $data['foto']; ?>"  >
-
-
-                <h2>Welcome,</h2>
+               <div class="profile_pic">
+                <img src="build/images/dokter/<?php echo $data['foto']; ?>" width='150px' >
+                <div class='profile_info'>
+                <span>Welcome,</span>
                 <h2><?php echo $data['nama_lengkap']; ?></h2>
+                </div>
                 </div>
              
             </div>

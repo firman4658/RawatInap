@@ -82,7 +82,9 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
               <div class="menu_section">
                 <h3>Menu</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Home</a>
+                 
+                  <li><a href="?module=admin" class="nav-link"><i class="fa fa-home"></i> Admin </span></a>
+                   
                   </li>
                   <li><a href="?module=dokter" class="nav-link"><i class="fa fa-user-md"></i> Dokter </span></a>
                    

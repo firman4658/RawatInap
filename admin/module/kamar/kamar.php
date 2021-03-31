@@ -1,7 +1,7 @@
 <?php
 $aksi="module/kamar/aksi_kamar.php";
 
-	switch($_GET[act])
+	switch($_GET['act'])
 	{
 
 	default:

@@ -7,8 +7,8 @@ if (empty($_SESSION['username']) AND empty ($_SESSION['password'])) {
 else{
 
 	include "../../../config/koneksi.php";
-	$module=$_GET[module];
-	$act=$_GET[act];
+	$module=$_GET['module'];
+	$act=$_GET['act'];
 
 	//hapus memanggil file pasiendel.php
 	if ($module=='pasien' AND $act=='hapus'){
@@ -29,4 +29,3 @@ else{
 		header('location:../../home.php?module='.$module);
 	}
  }
-?>

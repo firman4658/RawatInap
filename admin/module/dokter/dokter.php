@@ -1,7 +1,7 @@
 <?php
 $aksi="module/dokter/aksi_dokter.php";
 
-	switch($_GET[act])
+	switch($_GET['act'])
 	{
 
 	default:
@@ -109,5 +109,3 @@ $aksi="module/dokter/aksi_dokter.php";
 		</form>";
 	break;
 }
-?>
-	  

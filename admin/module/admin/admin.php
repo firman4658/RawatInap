@@ -4,11 +4,11 @@ $aksi="module/admin/aksi_admin.php";
 	switch($_GET[act])
 	{
 
-	default:
+		default:
 		// Tampil Data - mengambil file adminshow.php
 		echo"<a href='?module=admin&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg' ></i> Tambah</a>
-		<table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='110%'>
-		<thead>
+		 <table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='130%'>
+		 <thead>
 			<tr>
 				<th>NO</th> <th>Username</th> <th>Nama Lengkap</th> <th>Password</th> <th>Foto</th> <th>Aksi</th>
 			</tr></thead>";
@@ -18,8 +18,8 @@ $aksi="module/admin/aksi_admin.php";
 			while($r = mysqli_fetch_array($data))
 			{
 				$no++;
-		echo"<tr>
-				<td>$no</td> <td>$r[username]</td> <td>$r[nm_lengkap]</td> <td>$r[password]</td> <td><img src=dist/img/admin/$r[foto] width= 80px></td>  
+		echo"<tr class='align-middle'>
+				<td>$no</td> <td>$r[username]</td> <td>$r[nm_lengkap]</td> <td>$r[password]</td> <td><img src=build/images/admin/$r[foto] width= 80px></td> 
 				<td> 
 					<a href='?module=admin&act=edituser&id=$r[username]' > <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true' onclick = 'return confirm('Yakin Data Akan Dihapus');'></i> </a> | 
 					<a href='$aksi?module=admin&act=hapus&id=$r[username]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>
@@ -28,7 +28,6 @@ $aksi="module/admin/aksi_admin.php";
 			}
 		echo"</table>";
 	break;
-
 	// Tambah Data - memanggil file adminfm.php
 	case "tambahuser":
 		echo"<form action='$aksi?module=admin&act=input' method='POST'>
@@ -49,8 +48,8 @@ $aksi="module/admin/aksi_admin.php";
 				<tr>
 					<td></td>
 					<td>
-						<input class='btn btn-default' type=submit name=simpan value='Kirim'>
-						<input class='btn btn-default' type=reset name=batal value='Batal'>
+						<input class='btn btn-success' type=submit name=simpan value='Kirim'>
+						<input class='btn btn-danger' type=reset name=batal value='Batal'>
 					</td>
 				</tr>
 			</table>
@@ -85,8 +84,8 @@ $aksi="module/admin/aksi_admin.php";
 				<tr>
 					<td></td> 
 					<td>
-						<input type=submit class='btn btn-default' name=simpan value='Update'>
-						<input type=reset class='btn btn-default' name=batal value='Batal'>
+						<input type=submit class='btn btn-success' name=simpan value='Update'>
+						<input type=reset class='btn btn-danger' name=batal value='Batal'>
 					</td>
 				</tr>
 			</table>

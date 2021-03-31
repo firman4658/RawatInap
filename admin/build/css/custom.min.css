@@ -1204,13 +1204,13 @@
 }
 
 .profile_pic {
-	width: 35%;
+	width: 100%;
 	float: left;
 	padding: 20px;
 }
 
 .profile_pic img {
-	width: 100px;
+	width: 150px;
 }
 
 .img-circle.profile_img {
@@ -1225,7 +1225,7 @@
 }
 
 .profile_info {
-	padding: 80px 10px 10px;
+	padding: 20px 10px 10px;
 	width: 65%;
 	float: left
 }

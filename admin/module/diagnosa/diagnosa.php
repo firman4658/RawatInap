@@ -1,7 +1,7 @@
 <?php
 $aksi = "module/diagnosa/aksi_diagnosa.php";
 
-switch ($_GET['act']) {
+switch ($_GET[act]) {
 
 	default:
 		// Tampil Data - mengambil file adminshow.php

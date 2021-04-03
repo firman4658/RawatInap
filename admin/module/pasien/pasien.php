@@ -42,20 +42,15 @@ switch ($_GET['act']) {
                 <tr>
 					<td>Alamat</td> <td><input  class='form-control' type=text name=alamat></td>
 				</tr>
-
 				<tr>
-					<td>Jenis Kelamin</td> <td><div class='form-check primary'>
-					<input class='form-check-input' type='radio' name='jenis_kelamin' id='pria'>
-					<label class='form-check-label' for='pria'>
-					  Pria
-					</label>
-				  </div>
-				  <div class='form-check'>
-					<input class='form-check-input primary' type='radio' name='jenis_kelamin' id='Wanita' checked>
-					<label class='form-check-label danger' for='wanita'>
-					  Wanita
-					</label>
-				  </div></td>
+				<td>Umur</td> <td><input  class='form-control' type=text name=umur value=$umur->y></td>
+			</tr>
+				<tr>
+				<td>Pilih Jenis Kelamin</td>
+				<td>
+					<input type=radio name=jenis_kelamin value=Pria checked>Pria
+					<input type=radio name=jenis_kelamin value=Wanita checked>Wanita
+				</td>
 				</tr>
 				<tr>
 				<td>Pekerjaan</td> <td><input  class='form-control' type=text name=pekerjaan></td>
@@ -70,16 +65,21 @@ switch ($_GET['act']) {
 						<td>Telepon</td> <td><input  class='form-control' type=text name=tlpn></td>
 				</tr>
 				<tr>
-						<td>Tanggal Lahir</td> <td><input  class='form-control' type=text name=ttlahir></td>
+						<td>Tanggal Lahir</td> <td><input  class='form-control' type=date name=ttlahir></td>
 				</tr>
 				<tr>
-						<td>Tanggal daftar</td> <td><input  class='form-control' type=text name=tgl_daftar></td>
+						<td>Tanggal daftar</td> <td><input  class='form-control' type=date name=tgl_daftar></td>
 				</tr>
 				<tr>
 						<td>No Rekam medis</td> <td><input  class='form-control' type=text name=no_rekam></td>
 				</tr>
 				<tr>
-						<td>Asuransi</td> <td><input  class='form-control' type=text name=asuransi></td>
+				<td>Pilih Asuransi</td>
+				<td>
+					<input type=radio name=asuransi value=BPJS checked>BPJS
+					<input type=radio name=asuransi value=JAMKESMAS checked>JAMKESMAS
+					<input type=radio name=asuransi value=REGULER checked>REGULER
+				</td>
 				</tr>
 				<tr>
 					<td></td>
@@ -101,18 +101,28 @@ switch ($_GET['act']) {
 		echo "<form action='$aksi?module=pasien&act=update' method='POST'>
 			<table class='table table-striped table-bordered'>
 				<tr>
-					<td>Nama Pasien</td> 
+					<td>id Pasien</td> 
 					<td>
-						<input class='form-control' type=text name=nama_pasien value='$r[nama_pasien]' disabled>
-						<input class='form-control' type=hidden name='idh' value='$r[nama_pasien]'>
+						<input class='form-control' type=text name=id_pasien value='$r[id_pasien]' disabled>
+						<input class='form-control' type=hidden name='idh' value='$r[id_pasien]'>
 					</td>
 				</tr>
+			<tr>
+				<td>nama_pasien</td> <td><input  class='form-control' type=text name=nama_pasien value=$r[nama_pasien]></td>
+			</tr>
             <tr>
 				<td>Alamat</td> <td><input  class='form-control' type=text name=alamat value=$r[alamat]></td>
 			</tr>
 			<tr>
-					<td>Jenis Kelamin</td> <td><input  class='form-control' type=text name=jenis_kelamin value=$r[jenis_kelamin]></td>
-				</tr>
+			<td>Umur</td> <td><input  class='form-control' type=text name=umur value=$r[umur]></td>
+		</tr>
+			<tr>
+			<td>Pilih Jenis Kelamin</td>
+			<td>
+				<input type=radio name=jenis_kelamin value=Pria checked>Pria
+				<input type=radio name=jenis_kelamin value=Wanita checked>Wanita
+			</td>
+			</tr>
 				<tr>
 				<td>Pekerjaan</td> <td><input  class='form-control' type=text name=pekerjaan value=$r[pekerjaan]></td>
 				</tr>
@@ -126,16 +136,21 @@ switch ($_GET['act']) {
 						<td>Telepon</td> <td><input  class='form-control' type=text name=tlpn value=$r[tlpn]></td>
 				</tr>
 				<tr>
-						<td>Tanggal Lahir</td> <td><input  class='form-control' type=text name=ttlahir value=$r[ttlahir]></td>
+						<td>Tanggal Lahir</td> <td><input  class='form-control' type=date name=ttlahir value=$r[ttlahir]></td>
 				</tr>
 				<tr>
-						<td>Tanggal daftar</td> <td><input  class='form-control' type=text name=tgl_daftar value=$r[tgl_daftar]></td>
+						<td>Tanggal daftar</td> <td><input  class='form-control' type=date name=tgl_daftar value=$r[tgl_daftar]></td>
 				</tr>
 				<tr>
 						<td>No Rekam medis</td> <td><input  class='form-control' type=text name=no_rekam value=$r[no_rekam] ></td>
 				</tr>
 				<tr>
-						<td>Asuransi</td> <td><input  class='form-control' type=text name=asuransi value=$r[asuransi]></td>
+				<td>Pilih Asuransi</td>
+				<td>
+					<input type=radio name=asuransi value=BPJS checked>BPJS
+					<input type=radio name=asuransi value=JAMKESMAS checked>JAMKESMAS
+					<input type=radio name=asuransi value=REGULER checked>REGULER
+				</td>
 				</tr>
 				<tr>
 					<td></td> 

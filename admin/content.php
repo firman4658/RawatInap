@@ -24,5 +24,9 @@
 	{
 		include "module/diagnosa/diagnosa.php";
 	}
+	elseif ($_GET['module']=='pembayaran') 
+	{
+		include "module/pembayaran/pembayaran.php";
+	}
 
 ?>

@@ -1,36 +1,34 @@
 <?php
-$aksi="module/admin/aksi_admin.php";
+$aksi = "module/admin/aksi_admin.php";
 
-	switch($_GET[act])
-	{
+switch ($_GET['act']) {
 
-		default:
+	default:
 		// Tampil Data - mengambil file adminshow.php
-		echo"<a href='?module=admin&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg' ></i> Tambah</a>
-		 <table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='130%'>
+		echo "<a href='?module=admin&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg' ></i> Tambah</a>
+		 <table align='left' cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='130%'>
 		 <thead>
 			<tr>
 				<th>NO</th> <th>Username</th> <th>Nama Lengkap</th> <th>Password</th> <th>Foto</th> <th>Aksi</th>
 			</tr></thead>";
-			$no=0;
-			
-			$data = mysqli_query($konek,"SELECT * FROM admin");	
-			while($r = mysqli_fetch_array($data))
-			{
-				$no++;
-		echo"<tr class='align-middle'>
+		$no = 0;
+
+		$data = mysqli_query($konek, "SELECT * FROM admin");
+		while ($r = mysqli_fetch_array($data)) {
+			$no++;
+			echo "<tr>
 				<td>$no</td> <td>$r[username]</td> <td>$r[nm_lengkap]</td> <td>$r[password]</td> <td><img src=build/images/admin/$r[foto] width= 80px></td> 
 				<td> 
 					<a href='?module=admin&act=edituser&id=$r[username]' > <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true' onclick = 'return confirm('Yakin Data Akan Dihapus');'></i> </a> | 
 					<a href='$aksi?module=admin&act=hapus&id=$r[username]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>
 				</td>
 			</tr>";
-			}
-		echo"</table>";
-	break;
-	// Tambah Data - memanggil file adminfm.php
+		}
+		echo "</table>";
+		break;
+		// Tambah Data - memanggil file adminfm.php
 	case "tambahuser":
-		echo"<form action='$aksi?module=admin&act=input' method='POST'>
+		echo "<form action='$aksi?module=admin&act=input' method='POST'>
 			<table class='table table-striped table-bordered'>
 				<tr>
 					<td>Username</td> <td><input class='form-control' type=text name=username></td>
@@ -53,16 +51,16 @@ $aksi="module/admin/aksi_admin.php";
 					</td>
 				</tr>
 			</table>
-		</form>";	
-	break;
-		
-	// Edit Data - memanggil file admineditfm.php
+		</form>";
+		break;
+
+		// Edit Data - memanggil file admineditfm.php
 	case "edituser":
-		
-			$data = mysqli_query($konek,"SELECT * FROM admin where username='$_GET[id]'");
-			$r = mysqli_fetch_array($data);
-				
-		echo"<form action='$aksi?module=admin&act=update' method='POST'>
+
+		$data = mysqli_query($konek, "SELECT * FROM admin where username='$_GET[id]'");
+		$r = mysqli_fetch_array($data);
+
+		echo "<form action='$aksi?module=admin&act=update' method='POST'>
 			<table class='table table-striped table-bordered'>
 				<tr>
 					<td>Username</td> 
@@ -90,7 +88,5 @@ $aksi="module/admin/aksi_admin.php";
 				</tr>
 			</table>
 		</form>";
-	break;
+		break;
 }
-?>
-	  

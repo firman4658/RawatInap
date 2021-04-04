@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
-     
-     <?php
-      include '../config/koneksi.php';
-      $data = mysqli_query($konek, "SELECT * FROM pembayaran inner join diagnosa on pembayaran.id_diagnosa=diagnosa.id_diagnosa inner join asuransi on asuransi.nama_asuransi=pembayaran.nama_asuransi");
-      while ($r = mysqli_fetch_array($data));
-      $no++;
-      $kamar = $r['harga'];
-      $tindakan = $r['biaya_tindakan'];
-      $asuransi = $r['potongan'];
-      $hasil = $kamar+$tindakan-$asuransi;
 
-      echo"<tr>
+<body>
+
+     <?php
+     include '../config/koneksi.php';
+     $no++;
+     $kamar = $r['harga'];
+     $tindakan = $r['biaya_tindakan'];
+     $asuransi = $r['potongan'];
+     $hasil = $kamar + $tindakan - $asuransi;
+
+     echo "<tr>
           <td>Nama Pasien</td> 
           <td> <select name=id_pasien class='form-control'>
                <option value='null'>Silahkan Pilih Pasien </option>";
-          $data = mysqli_query($konek, "SELECT * FROM pasien");
-          while ($r = mysqli_fetch_array($data)) {
-               echo "<option value='$r[id_pasien]'> $r[nama_pasien]</option>";
-          }
+     $data = mysqli_query($konek, "SELECT * FROM pembayaran inner join diagnosa on pembayaran.id_diagnosa=diagnosa.id_diagnosa inner join asuransi on asuransi.nama_asuransi=pembayaran.nama_asuransi INNER JOIN pasien ON pasien.id_pasien=diagnosa.id_pasien");
+     while ($r = mysqli_fetch_array($data)) {
+          echo "<option value='$r[id_pasien]'> $r[nama_pasien]</option>";
+
           echo "</select>
           </td>
       </tr>
@@ -27,10 +26,8 @@
           <td>diagnosa</td> 
           <td> <select name=id_diagnosa class='form-control'>
                <option value='null'>Silahkan Pilih diagnosa </option>";
-          $data = mysqli_query($konek, "SELECT * FROM diagnosa");
-          while ($r = mysqli_fetch_array($data)) {
-               echo "<option value='$r[id_diagnosa]'> $r[diagnosa]</option>";
-          }
+          echo "<option value='$r[id_diagnosa]'> $r[diagnosa]</option>";
+
           echo "</select>
           </td>
       </tr>
@@ -38,10 +35,8 @@
           <td>penyakit</td> 
           <td> <select name=id_diagnosa class='form-control'>
                <option value='null'>Silahkan Pilih Penyakit </option>";
-          $data = mysqli_query($konek, "SELECT * FROM diagnosa");
-          while ($r = mysqli_fetch_array($data)) {
-               echo "<option value='$r[id_diagnosa]'> $r[penyakit]</option>";
-          }
+          echo "<option value='$r[id_diagnosa]'> $r[penyakit]</option>";
+
           echo "</select>
           </td>
       </tr>
@@ -49,10 +44,9 @@
           <td>Tindakan</td> 
           <td> <select name=id_diagnosa class='form-control'>
                <option value='null'>Silahkan Pilih Tindakan </option>";
-          $data = mysqli_query($konek, "SELECT * FROM diagnosa");
-          while ($r = mysqli_fetch_array($data)) {
-               echo "<option value='$r[id_diagnosa]'> $r[tindakan]</option>";
-          }
+
+          echo "<option value='$r[id_diagnosa]'> $r[tindakan]</option>";
+
           echo "</select>
           </td>
       </tr>
@@ -60,10 +54,9 @@
           <td>Kamar Pasien</td> 
           <td> <select name=id_kamar class='form-control'>
                <option value='null'>Silahkan Pilih Kamar </option>";
-          $data = mysqli_query($konek, "SELECT * FROM kamar");
-          while ($r = mysqli_fetch_array($data)) {
-               echo "<option value='$r[id_kamar]'> $r[nama_kamar]</option>";
-          }
+
+          echo "<option value='$r[id_kamar]'> $r[nama_kamar]</option>";
+
           echo "</select>
           </td>
       </tr>
@@ -71,11 +64,10 @@
                <td>Biaya Tindakan</td> 
                <td> <select name=id_pembayaran class='form-control'>
                     <option value='null'>Silahkan Pilih pembayaran </option>";
-               $data = mysqli_query($konek, "SELECT * FROM pembayaran");
-               while ($r = mysqli_fetch_array($data)) {
-                    echo "<option value='$r[id_pembayaran]'> $r[biaya_tindakan]</option>";
-               }
-               echo "</select>
+
+          echo "<option value='$r[id_pembayaran]'> $r[biaya_tindakan]</option>";
+
+          echo "</select>
                </td>
           </tr>
       </tr>
@@ -83,11 +75,10 @@
       <td>Jenis Pembayaran</td> 
       <td> <select name=nama_asuransi class='form-control'>
            <option value='null'>Silahkan Pilih Jenis </option>";
-      $data = mysqli_query($konek, "SELECT * FROM asuransi");
-      while ($r = mysqli_fetch_array($data)) {
-           echo "<option value='$r[nama_asuransi]'> $r[nama_asuransi]</option>";
-      }
-      echo "</select>
+
+          echo "<option value='$r[nama_asuransi]'> $r[nama_asuransi]</option>";
+     }
+     echo "</select>
       </td>
   </tr>
   <tr>
@@ -108,7 +99,8 @@
   </tr>
  ";
      ?>
-    
+
 
 </body>
+
 </html>

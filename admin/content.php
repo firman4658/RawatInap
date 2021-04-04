@@ -28,5 +28,10 @@
 	{
 		include "module/pembayaran/pembayaran.php";
 	}
+	elseif ($_GET['module']=='total') 
+	{
+		include "module/total/total.php";
+	}
+
 
 ?>

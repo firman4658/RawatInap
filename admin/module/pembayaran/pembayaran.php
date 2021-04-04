@@ -3,21 +3,20 @@ $aksi = "module/pembayaran/aksi_pembayaran.php";
 
 switch ($_GET['act']) {
 
-	default:
-		// Tampil Data - mengambil file adminshow.php
-		echo "<a href='?module=pembayaran&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg'></i> Tambah</a>
+     default:
+          // Tampil Data - mengambil file adminshow.php
+          echo "<a href='?module=pembayaran&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg'></i> Tambah</a>
 		<table cellpadding='40px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='150%'>
 		 <thead>
 			<tr>
 				<th>NO</th> <th>Nama Pasien</th> <th>Tgl Keluar</th> <th>Biaya Tindakan</th> <th>Jenis Asuransi</th> <th>Total Bayar</th>  <th>Pilihan</th> 
 			</tr></thead>";
-			$no=0;
-			
-			$data = mysqli_query($konek,"SELECT * FROM pembayaran inner join diagnosa on diagnosa.id_diagnosa=pembayaran.id_diagnosa inner join pasien on pasien.id_pasien=diagnosa.id_pasien");	
-			while($r = mysqli_fetch_array($data))
-			{
-				$no++;
-		echo"<tr class='align-middle'>
+          $no = 0;
+
+          $data = mysqli_query($konek, "SELECT * FROM pembayaran inner join diagnosa on diagnosa.id_diagnosa=pembayaran.id_diagnosa inner join pasien on pasien.id_pasien=diagnosa.id_pasien");
+          while ($r = mysqli_fetch_array($data)) {
+               $no++;
+               echo "<tr class='align-middle'>
 				<td>$no</td> <td>$r[nama_pasien]</td> <td>$r[tgl_keluar]</td> <td>$r[biaya_tindakan]</td> <td>$r[nama_asuransi]</td>   
 				<td align='center'>
                     <a href='?module=total'><input class='btn btn-success' type=submit name=hitung value='Hitung'></a>
@@ -26,13 +25,13 @@ switch ($_GET['act']) {
                     <a href='$aksi?module=pembayaran&act=hapus&id=$r[id_pembayaran]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>
                </td>
           </tr>";
-     }
-     echo "</table>";
-     break;
+          }
+          echo "</table>";
+          break;
 
-		// Tambah Data - memanggil file pasienfm.php
-	case "tambahuser":
-		echo "<form action='$aksi?module=pembayaran&act=input' method='POST'>
+          // Tambah Data - memanggil file pasienfm.php
+     case "tambahuser":
+          echo "<form action='$aksi?module=pembayaran&act=input' method='POST'>
 			<table class='table table-striped table-bordered' >
 				<tr>
 					<td>Nama Pasien</td> <td><input class='form-control' type=text name=nama_pasien></td>
@@ -80,15 +79,15 @@ switch ($_GET['act']) {
 				</tr>
 			</table>
 		</form>";
-		break;
+          break;
 
-		// Edit Data - memanggil file pasieneditfm.php
-	case "edituser":
+          // Edit Data - memanggil file pasieneditfm.php
+     case "edituser":
 
-		$data = mysqli_query($konek, "SELECT * FROM pasien where id_pasien='$_GET[id]'");
-		$r = mysqli_fetch_array($data);
+          $data = mysqli_query($konek, "SELECT * FROM pasien where id_pasien='$_GET[id]'");
+          $r = mysqli_fetch_array($data);
 
-		echo "<form action='$aksi?module=pasien&act=update' method='POST'>
+          echo "<form action='$aksi?module=pasien&act=update' method='POST'>
 			<table class='table table-striped table-bordered'>
 				<tr>
 					<td>id Pasien</td> 
@@ -143,5 +142,5 @@ switch ($_GET['act']) {
 				</tr>
 			</table>
 		</form>";
-		break;
+          break;
 }

@@ -9,7 +9,7 @@ switch ($_GET['act']) {
 		<table cellpadding='40px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='140%'>
 		 <thead>
 			<tr>
-				<th>NO</th> <th>Nama Pasien</th> <th>Alamat</th> <th>Umur</th> <th>Jenis Kelamin</th> <th>pekerjaan</th> <th>Status</th> <th>Agama</th> <th>Telepon</th> <th>Tanggal lahir</th> <th>Tanggal daftar</th><th>No Rekam medis</th>  <th>Asuransi</th><th>pilihan</th>
+				<th>NO</th> <th>Nama Pasien</th> <th>Alamat</th> <th>Umur</th> <th>Jenis Kelamin</th> <th>pekerjaan</th> <th>Status</th> <th>Agama</th> <th>Telepon</th> <th>Tanggal lahir</th> <th>Tanggal daftar</th><th>No Rekam medis</th><th>pilihan</th>
 			</tr></thead>";
 		$no = 0;
 
@@ -22,7 +22,7 @@ switch ($_GET['act']) {
 			$sekarang = new DateTime();
 			$umur = $sekarang->diff($usia);
 			echo "<tr>
-				<td>$no</td> <td>$r[nama_pasien]</td> <td>$r[alamat]</td> <td>$umur->y Tahun</td> <td>$r[jenis_kelamin]</td> <td>$r[pekerjaan]</td> <td>$r[status]</td> <td>$r[agama]</td> <td>$r[tlpn]</td> <td>$r[ttlahir]</td> <td>$r[tgl_daftar]</td> <td>$r[no_rekam]</td> <td>$r[asuransi]</td>
+				<td>$no</td> <td>$r[nama_pasien]</td> <td>$r[alamat]</td> <td>$umur->y Tahun</td> <td>$r[jenis_kelamin]</td> <td>$r[pekerjaan]</td> <td>$r[status]</td> <td>$r[agama]</td> <td>$r[tlpn]</td> <td>$r[ttlahir]</td> <td>$r[tgl_daftar]</td> <td>$r[no_rekam]</td>
 				<td> 
 					<a href='?module=pasien&act=edituser&id=$r[id_pasien]'> <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i> </a> | 
 					<a href='$aksi?module=pasien&act=hapus&id=$r[id_pasien]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>
@@ -72,14 +72,6 @@ switch ($_GET['act']) {
 				</tr>
 				<tr>
 						<td>No Rekam medis</td> <td><input  class='form-control' type=text name=no_rekam></td>
-				</tr>
-				<tr>
-				<td>Pilih Asuransi</td>
-				<td>
-					<input type=radio name=asuransi value=BPJS checked>BPJS
-					<input type=radio name=asuransi value=JAMKESMAS checked>JAMKESMAS
-					<input type=radio name=asuransi value=REGULER checked>REGULER
-				</td>
 				</tr>
 				<tr>
 					<td></td>
@@ -143,14 +135,6 @@ switch ($_GET['act']) {
 				</tr>
 				<tr>
 						<td>No Rekam medis</td> <td><input  class='form-control' type=text name=no_rekam value=$r[no_rekam] ></td>
-				</tr>
-				<tr>
-				<td>Pilih Asuransi</td>
-				<td>
-					<input type=radio name=asuransi value=BPJS checked>BPJS
-					<input type=radio name=asuransi value=JAMKESMAS checked>JAMKESMAS
-					<input type=radio name=asuransi value=REGULER checked>REGULER
-				</td>
 				</tr>
 				<tr>
 					<td></td> 

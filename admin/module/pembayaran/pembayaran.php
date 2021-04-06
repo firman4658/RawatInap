@@ -6,8 +6,8 @@ switch ($_GET['act']) {
      default:
           // Tampil Data - mengambil file adminshow.php
           echo "<a href='?module=pembayaran&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg'></i> Tambah</a>
-		<table cellpadding='40px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='150%'>
-		 <thead>
+		<table cellpadding='40px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='120%'>
+		 <thead align=center>
 			<tr>
 				<th>NO</th> <th>Nama Pasien</th> <th>Tgl Keluar</th> <th>Biaya Tindakan</th> <th>Jenis Asuransi</th> <th>Total Bayar</th>  <th>Pilihan</th> 
 			</tr></thead>";
@@ -16,7 +16,7 @@ switch ($_GET['act']) {
           $data = mysqli_query($konek, "SELECT * FROM pembayaran inner join diagnosa on diagnosa.id_diagnosa=pembayaran.id_diagnosa inner join pasien on pasien.id_pasien=diagnosa.id_pasien");
           while ($r = mysqli_fetch_array($data)) {
                $no++;
-               echo "<tr class='align-middle'>
+               echo "<tr align=center>
 				<td>$no</td> <td>$r[nama_pasien]</td> <td>$r[tgl_keluar]</td> <td>$r[biaya_tindakan]</td> <td>$r[nama_asuransi]</td>   
 				<td align='center'>
 				<a href='?module=pembayaran&act=hitung&id=$r[id_pembayaran]'><input class='btn btn-success' type=submit name=hitung value='Hitung'></a>
@@ -150,6 +150,7 @@ switch ($_GET['act']) {
 		  
 		  
 			  $no++;
+			  $pasien = $r['nama_pasien'];
 			  $kamar = $r['harga'];
 			  $tindakan = $r['biaya_tindakan'];
 			  $asuransi = $r['potongan'];
@@ -158,20 +159,18 @@ switch ($_GET['act']) {
 			  $hasil = $kamar + $tindakan - $asuransi;
 			}
 			echo " 
-			<p></p>
-			<tr>
-			Biaya tindakan  = Rp.$tindakan <br>
-		  
-			Biaya Kamar = Rp.$kamar <br>
-			Potongan dari asuransi = Rp.$asuransi <br>
-			  <td>Jadi Total Yang di Bayar Pasien Adalah = Rp $hasil.000</td> 
-			</tr>
-		   ";
+			<h2 align=center> RINCIAN PEMBAYARAN RUMAH SAKIT RAWAT INAP</h2>";
+			echo " 
+			<table cellpadding='40px' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='150%'>
+			<thead align=center>
+				 <th>Nama Pasien</th> <th>Biaya Tindakan</th> <th>Biaya Kamar</th> <th>Potongan</th> <th>Total Bayar</th> 
+			</tr></thead>";
+			echo "<tr align=center>
+						<td>$pasien</td> <td>Rp.$tindakan</td> <td>Rp.$kamar</td> <td>Rp.$asuransi</td> <td>Rp.$hasil.000</td>
+				 </tr> 
+			</table>";
+			
 		   break;
-
-
-
-
 
 
 }

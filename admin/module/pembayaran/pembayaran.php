@@ -19,7 +19,7 @@ switch ($_GET['act']) {
                echo "<tr class='align-middle'>
 				<td>$no</td> <td>$r[nama_pasien]</td> <td>$r[tgl_keluar]</td> <td>$r[biaya_tindakan]</td> <td>$r[nama_asuransi]</td>   
 				<td align='center'>
-                    <a href='?module=total'><input class='btn btn-success' type=submit name=hitung value='Hitung'></a>
+				<a href='?module=pembayaran&act=hitung&id=$r[id_pembayaran]'><input class='btn btn-success' type=submit name=hitung value='Hitung'></a>
                     <td> 
                     <a href='?module=pembayaran&act=edituser&id=$r[id_pembayaran]'> <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i> </a> | 
                     <a href='$aksi?module=pembayaran&act=hapus&id=$r[id_pembayaran]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>
@@ -143,4 +143,35 @@ switch ($_GET['act']) {
 			</table>
 		</form>";
           break;
+		
+		  case "hitung":
+			$data = mysqli_query($konek, "SELECT * FROM pembayaran inner join diagnosa on pembayaran.id_diagnosa=diagnosa.id_diagnosa inner join asuransi on asuransi.nama_asuransi=pembayaran.nama_asuransi INNER JOIN pasien ON pasien.id_pasien=diagnosa.id_pasien inner join kamar on kamar.id_kamar=diagnosa.id_kamar where id_pembayaran='$_GET[id]'");
+			while ($r = mysqli_fetch_assoc($data)) {
+		  
+		  
+			  $no++;
+			  $kamar = $r['harga'];
+			  $tindakan = $r['biaya_tindakan'];
+			  $asuransi = $r['potongan'];
+		  
+		  
+			  $hasil = $kamar + $tindakan - $asuransi;
+			}
+			echo " 
+			<p></p>
+			<tr>
+			Biaya tindakan  = Rp.$tindakan <br>
+		  
+			Biaya Kamar = Rp.$kamar <br>
+			Potongan dari asuransi = Rp.$asuransi <br>
+			  <td>Jadi Total Yang di Bayar Pasien Adalah = Rp $hasil.000</td> 
+			</tr>
+		   ";
+		   break;
+
+
+
+
+
+
 }

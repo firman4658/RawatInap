@@ -164,24 +164,18 @@ switch ($_GET['act']) {
 			$asuransi = ($r['potongan'] * 1000);
 			$hasil = $kamar + $tindakan - $asuransi;
 
-
-			//functionfunction rupiah($angka){
-				function rupiah($angka){
-	
-					$hasil_rupiah = "Rp " . number_format($angka,2,',','.');
-					return $hasil_rupiah;
-				}
-				echo rupiah(100000);
-
 			echo "   <br>	
-			<h2 align=center> RINCIAN PEMBAYARAN RUMAH SAKIT RAWAT INAP</h2>";
+			<h2 align=center> RINCIAN PEMBAYARAN RUMAH SAKIT RAWAT INAP</h2>;
+			<p></p>";
 			echo " 
 			<table cellpadding='40px' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' >
 			<thead align=center>
 				 <th>Nama Pasien</th> <th>Biaya Tindakan</th><th>Tarif kamar/Hari </th><th>Lama Inap</th> <th>Biaya Kamar</th> <th>Potongan Asuransi</th> <th>Total Bayar</th> 
 			</tr></thead>";
-			echo "<tr align=center>
-			<td>$pasien</td> <td>Rp.$tindakan</td> <td>$r[nama_kamar] | Rp.$biaya</td><td>$selisi->d Hari</td><td>Rp.$kamar</td> <td> $r[nama_asuransi] | Rp.$asuransi</td> <td>Rp.$hasil</td>
+			echo "<tr align=center>";
+			echo "<td>$pasien</td>";
+			echo " <td>Rp.$tindakan</td>";
+			echo " <td>$r[nama_kamar] | Rp.$biaya</td><td>$selisi->d Hari</td><td>Rp.$kamar</td> <td> $r[nama_asuransi] | Rp.$asuransi</td> <td>Rp.$hasil</td>
 				 </tr> 
 			</table>";
 		}

@@ -47,5 +47,3 @@ if ($level == "admin") {
 }else{
     header("location:index.php");
 }
-
-?>

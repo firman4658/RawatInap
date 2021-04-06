@@ -36,11 +36,11 @@ switch ($_GET['act']) {
 			<td>Pasien</td> 
 			<td><select name=id_diagnosa class='form-control'>
 					<option value='null'>Silahkan Pilih Pasien </option>";
-						$data = mysqli_query($konek, "SELECT * FROM diagnosa inner join pasien on pasien.id_pasien=diagnosa.id_pasien");
-						while ($r = mysqli_fetch_array($data)) {
-							echo "<option value=$r[id_diagnosa]> $r[nama_pasien]</option>";
-						}
-						echo "</select>
+		$data = mysqli_query($konek, "SELECT * FROM diagnosa inner join pasien on pasien.id_pasien=diagnosa.id_pasien");
+		while ($r = mysqli_fetch_array($data)) {
+			echo "<option value='$r[id_diagnosa]'> $r[nama_pasien]</option>";
+		}
+		echo "</select>
 							</td>
 			</tr>
 				<tr>
@@ -54,11 +54,11 @@ switch ($_GET['act']) {
 				<td>Asuransi</td> 
 				<td><select name=nama_asuransi class='form-control'>
 						<option value='null'>Silahkan Pilih Asuransi </option>";
-							$data = mysqli_query($konek, "SELECT * FROM asuransi");
-							while ($r = mysqli_fetch_array($data)) {
-								echo "<option value='$r[nama_asuransi]'> $r[nama_asuransi]</option>";
-							}
-							echo "</select>
+		$data = mysqli_query($konek, "SELECT * FROM asuransi");
+		while ($r = mysqli_fetch_array($data)) {
+			echo "<option value='$r[nama_asuransi]'> $r[nama_asuransi]</option>";
+		}
+		echo "</select>
 								</td>
 				</tr>
 				<tr>

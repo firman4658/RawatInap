@@ -169,7 +169,8 @@ switch ($_GET['act']) {
 			$hasil = $kamar + $tindakan - $asuransi;
 
 			echo "   <br>	
-			<h2 align=center> RINCIAN PEMBAYARAN RUMAH SAKIT RAWAT INAP</h2>";
+			<h2 align=center> RINCIAN PEMBAYARAN RUMAH SAKIT RAWAT INAP</h2>;
+			<p></p>";
 			echo " 
 			<table cellpadding='40px' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' >
 			<thead align=center>

@@ -167,18 +167,18 @@ switch ($_GET['act']) {
 
 
 			$hasil = $kamar + $tindakan - $asuransi;
-		}
-		echo "   <br>	
+
+			echo "   <br>	
 			<h2 align=center> RINCIAN PEMBAYARAN RUMAH SAKIT RAWAT INAP</h2>";
-		echo " 
+			echo " 
 			<table cellpadding='40px' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' >
 			<thead align=center>
-				 <th>Nama Pasien</th> <th>Biaya Tindakan</th><th>Tarif kamar/Hari </th><th>Lama Inap</th> <th>Biaya Kamar</th> <th>Potongan</th> <th>Total Bayar</th> 
+				 <th>Nama Pasien</th> <th>Biaya Tindakan</th><th>Tarif kamar/Hari </th><th>Lama Inap</th> <th>Biaya Kamar</th> <th>Potongan Asuransi</th> <th>Total Bayar</th> 
 			</tr></thead>";
-		echo "<tr align=center>
-			<td>$pasien</td> <td>Rp.$tindakan</td> <td>Rp.$biaya</td><td>$selisi->d Hari</td><td>Rp.$kamar</td> <td>Rp.$asuransi</td> <td>Rp.$hasil</td>
+			echo "<tr align=center>
+			<td>$pasien</td> <td>Rp.$tindakan</td> <td>$r[nama_kamar] | Rp.$biaya</td><td>$selisi->d Hari</td><td>Rp.$kamar</td> <td> $r[nama_asuransi] | Rp.$asuransi</td> <td>Rp.$hasil</td>
 				 </tr> 
 			</table>";
-
+		}
 		break;
 }

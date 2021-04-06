@@ -162,10 +162,6 @@ switch ($_GET['act']) {
 			$kamar = ($r['harga']  * 1000) * ($selisi->d);
 			$tindakan = ($r['biaya_tindakan'] * 1000);
 			$asuransi = ($r['potongan'] * 1000);
-
-
-
-
 			$hasil = $kamar + $tindakan - $asuransi;
 
 			echo "   <br>	

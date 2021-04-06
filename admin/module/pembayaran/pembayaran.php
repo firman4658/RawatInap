@@ -16,11 +16,14 @@ switch ($_GET['act']) {
           $data = mysqli_query($konek, "SELECT * FROM pembayaran inner join diagnosa on diagnosa.id_diagnosa=pembayaran.id_diagnosa inner join pasien on pasien.id_pasien=diagnosa.id_pasien");
           while ($r = mysqli_fetch_array($data)) {
                $no++;
-               echo "<tr class='align-middle'>
+               $id_pembayaran = $r['id_pembayaran'];
+               echo "<form action='../total/total.php' method='post'>
+                    <tr class='align-middle'>
 				<td>$no</td> <td>$r[nama_pasien]</td> <td>$r[tgl_keluar]</td> <td>$r[biaya_tindakan]</td> <td>$r[nama_asuransi]</td>   
 				<td align='center'>
-                    <a href='?module=total'><input class='btn btn-success' type=submit name=hitung value='Hitung'></a>
+                    <a href='?module=total'><input class='btn btn-success' type=submit name='$id_pembayaran' value='Hitung' ></a> 
                     <td> 
+                    </form>
                     <a href='?module=pembayaran&act=edituser&id=$r[id_pembayaran]'> <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i> </a> | 
                     <a href='$aksi?module=pembayaran&act=hapus&id=$r[id_pembayaran]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>
                </td>

@@ -40,7 +40,7 @@ if ($level == "admin") {
         session_start();
         $_SESSION['username'] = $username;
         $_SESSION['status'] = 'login';
-        header("location:home.php");
+        header("location:home2.php");
     }else{
         header("location:index.php");
     }

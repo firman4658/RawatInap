@@ -164,15 +164,6 @@ switch ($_GET['act']) {
 			$asuransi = ($r['potongan'] * 1000);
 			$hasil = $kamar + $tindakan - $asuransi;
 
-
-			//functionfunction rupiah($angka){
-				function rupiah($angka){
-	
-					$hasil_rupiah = "Rp " . number_format($angka,2,',','.');
-					return $hasil_rupiah;
-				}
-				echo rupiah(100000);
-
 			echo "   <br>	
 			<h2 align=center> RINCIAN PEMBAYARAN RUMAH SAKIT RAWAT INAP</h2>";
 			echo " 

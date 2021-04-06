@@ -12,6 +12,10 @@
 	{
 		include "module/dokter/dokter.php";
 	}
+	elseif ($_GET['module']=='dokter1') 
+	{
+		include "module/dokter1/dokter1.php";
+	}
 	elseif ($_GET['module']=='pasien') 
 	{
 		include "module/pasien/pasien.php";

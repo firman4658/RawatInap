@@ -43,9 +43,6 @@ switch ($_GET['act']) {
 					<td>Alamat</td> <td><input  class='form-control' type=text name=alamat></td>
 				</tr>
 				<tr>
-				<td>Umur</td> <td><input  class='form-control' type=text name=umur value=$umur->y></td>
-			</tr>
-				<tr>
 				<td>Pilih Jenis Kelamin</td>
 				<td>
 					<input type=radio name=jenis_kelamin value=Pria checked>Pria
@@ -105,9 +102,7 @@ switch ($_GET['act']) {
             <tr>
 				<td>Alamat</td> <td><input  class='form-control' type=text name=alamat value=$r[alamat]></td>
 			</tr>
-			<tr>
-			<td>Umur</td> <td><input  class='form-control' type=text name=umur value=$r[umur]></td>
-		</tr>
+			
 			<tr>
 			<td>Pilih Jenis Kelamin</td>
 			<td>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Apr 2021 pada 08.23
+-- Waktu pembuatan: 06 Apr 2021 pada 18.48
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.2.28
 
@@ -41,6 +41,7 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`username`, `nm_lengkap`, `password`, `foto`) VALUES
 ('aswar12', 'aswar', 'aswar12', 'aswar.jpg'),
+('fatimah1', 'fatimah', '123456', 'fatimah.png'),
 ('firman46', 'firmansyah', 'firman46', 'firman.jpg');
 
 -- --------------------------------------------------------
@@ -74,7 +75,7 @@ CREATE TABLE `diagnosa` (
   `id_pasien` int(11) NOT NULL,
   `diagnosa` varchar(50) NOT NULL,
   `penyakit` varchar(11) NOT NULL,
-  `tindakan` varchar(11) NOT NULL,
+  `tindakan` varchar(20) NOT NULL,
   `id_kamar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -84,7 +85,8 @@ CREATE TABLE `diagnosa` (
 
 INSERT INTO `diagnosa` (`id_diagnosa`, `id_pasien`, `diagnosa`, `penyakit`, `tindakan`, `id_kamar`) VALUES
 (1, 1, 'penyakit jantung', 'jantung', 'operasi', 1),
-(9, 1, 'sada', 'sasa', 'sasa', 1);
+(9, 5, 'hati', 'iri', 'operasi', 3),
+(13, 6, 'hati', 'iri', 'operasi', 3);
 
 -- --------------------------------------------------------
 
@@ -94,7 +96,7 @@ INSERT INTO `diagnosa` (`id_diagnosa`, `id_pasien`, `diagnosa`, `penyakit`, `tin
 
 CREATE TABLE `dokter` (
   `username` varchar(11) NOT NULL,
-  `nama_lengkap` varchar(11) NOT NULL,
+  `nama_lengkap` varchar(25) NOT NULL,
   `alamat` text NOT NULL,
   `password` varchar(11) NOT NULL,
   `foto` varchar(20) NOT NULL,
@@ -111,7 +113,8 @@ INSERT INTO `dokter` (`username`, `nama_lengkap`, `alamat`, `password`, `foto`, 
 ('chesa', 'chesaaaaaaa', 'jl. pankepda', '2222', 'chesa.jpg', 'hati wanita', '0822312121'),
 ('whidy', 'Whidy Dwiya', 'jl. Perumnas Antang', '2012', 'whidy.jpeg', 'hati', '082212345678'),
 ('chairunnisa', 'chairunnisa', 'jl. paccerakkang', '2222', 'chairunnisa.jpeg', 'gigi', '029283393993'),
-('indrawati', 'Indrawatiku', 'jl. paccerang', '2323', 'indrawati.jpeg', 'otak-otak', '09399393823');
+('indrawati', 'Indrawatiku', 'jl. paccerang', '2323', 'indrawati.jpeg', 'otak-otak', '09399393823'),
+('aswar12', 'Aswar Sumarlin', 'jl. Pangkep', '12345', 'aswar.jpg', 'Kaki', '089999999999');
 
 -- --------------------------------------------------------
 
@@ -133,7 +136,8 @@ CREATE TABLE `kamar` (
 INSERT INTO `kamar` (`id_kamar`, `nama_kamar`, `tipe_kamar`, `harga`) VALUES
 (1, 'mawar', 'VVIP', 500.000),
 (2, 'melati', 'VIP', 400.000),
-(3, 'raflesia', 'Reguler', 100.000);
+(3, 'raflesia', 'Reguler', 100.000),
+(4, 'Kembang', 'Reguler', 90.000);
 
 -- --------------------------------------------------------
 
@@ -145,7 +149,6 @@ CREATE TABLE `pasien` (
   `id_pasien` int(11) NOT NULL,
   `nama_pasien` varchar(11) NOT NULL,
   `alamat` text NOT NULL,
-  `umur` int(5) NOT NULL,
   `jenis_kelamin` enum('Pria','Wanita') NOT NULL DEFAULT 'Pria',
   `pekerjaan` varchar(50) NOT NULL,
   `status` varchar(50) NOT NULL,
@@ -160,9 +163,10 @@ CREATE TABLE `pasien` (
 -- Dumping data untuk tabel `pasien`
 --
 
-INSERT INTO `pasien` (`id_pasien`, `nama_pasien`, `alamat`, `umur`, `jenis_kelamin`, `pekerjaan`, `status`, `agama`, `tlpn`, `ttlahir`, `tgl_daftar`, `no_rekam`) VALUES
-(1, 'firman', 'jl. paccerakkang', 21, 'Pria', 'mahasiswa', 'belum nikah', 'islam', '0813-444-555-77', '1998-07-07', '2021-03-30', '00-00-01'),
-(5, 'aswar', 'jl. pankep', 0, 'Pria', 'mahasiswa', 'belum nikah', 'islam', '8665745443', '2000-01-12', '2021-04-03', '00-00-03');
+INSERT INTO `pasien` (`id_pasien`, `nama_pasien`, `alamat`, `jenis_kelamin`, `pekerjaan`, `status`, `agama`, `tlpn`, `ttlahir`, `tgl_daftar`, `no_rekam`) VALUES
+(1, 'firman', 'jl. paccerakkang', 'Pria', 'mahasiswa', 'belum nikah', 'islam', '0813-444-555-77', '1998-07-07', '2021-03-30', '00-00-01'),
+(5, 'aswar', 'jl. pankep', 'Pria', 'mahasiswa', 'belum nikah', 'islam', '8665745443', '2000-01-12', '2021-04-03', '00-00-03'),
+(6, 'Fatimah', 'jl. Pangkep', 'Wanita', 'IRT', 'Nikah', 'Islam', '0888881', '2020-07-06', '2021-04-06', '00-00-04');
 
 -- --------------------------------------------------------
 
@@ -183,7 +187,20 @@ CREATE TABLE `pembayaran` (
 --
 
 INSERT INTO `pembayaran` (`id_pembayaran`, `id_diagnosa`, `tgl_keluar`, `biaya_tindakan`, `nama_asuransi`) VALUES
-(1, 1, '2021-04-03', 500.000, 'BPJS');
+(1, 1, '2021-04-03', 500.000, 'BPJS'),
+(3, 13, '0000-00-00', 900.000, 'JAMKESMAS');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `total`
+--
+
+CREATE TABLE `total` (
+  `id_total` int(11) NOT NULL,
+  `id_diagnosa` int(11) NOT NULL,
+  `id_pembayaran` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -230,6 +247,14 @@ ALTER TABLE `pembayaran`
   ADD KEY `nama_asuransi` (`nama_asuransi`);
 
 --
+-- Indeks untuk tabel `total`
+--
+ALTER TABLE `total`
+  ADD PRIMARY KEY (`id_total`),
+  ADD KEY `id_diagnosa` (`id_diagnosa`,`id_pembayaran`),
+  ADD KEY `id_pembayaran` (`id_pembayaran`);
+
+--
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
@@ -237,25 +262,25 @@ ALTER TABLE `pembayaran`
 -- AUTO_INCREMENT untuk tabel `diagnosa`
 --
 ALTER TABLE `diagnosa`
-  MODIFY `id_diagnosa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_diagnosa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `kamar`
 --
 ALTER TABLE `kamar`
-  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `pasien`
 --
 ALTER TABLE `pasien`
-  MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -274,6 +299,13 @@ ALTER TABLE `diagnosa`
 ALTER TABLE `pembayaran`
   ADD CONSTRAINT `pembayaran_ibfk_1` FOREIGN KEY (`id_diagnosa`) REFERENCES `diagnosa` (`id_diagnosa`),
   ADD CONSTRAINT `pembayaran_ibfk_2` FOREIGN KEY (`nama_asuransi`) REFERENCES `asuransi` (`nama_asuransi`);
+
+--
+-- Ketidakleluasaan untuk tabel `total`
+--
+ALTER TABLE `total`
+  ADD CONSTRAINT `total_ibfk_1` FOREIGN KEY (`id_diagnosa`) REFERENCES `diagnosa` (`id_diagnosa`),
+  ADD CONSTRAINT `total_ibfk_2` FOREIGN KEY (`id_pembayaran`) REFERENCES `pembayaran` (`id_pembayaran`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

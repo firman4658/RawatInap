@@ -7,7 +7,7 @@ if (empty($_SESSION['username']) AND empty ($_SESSION['passuser'])) {
 else{
 
 	include "../../../config/koneksi.php";
-	$module=$_GET[module];
+	$module=$_GET['module'];
 	$act=$_GET['act'];
 
 	//hapus memanggil file provinsidel.php
@@ -18,7 +18,7 @@ else{
 
 	//input memanggil file provinsisim.php
 	elseif ($module=='diagnosa' AND $act=='input') {
-		mysqli_query($konek,"INSERT INTO diagnosa values ('$_POST[id_diagnosa]','$_POST[nama_pasien]','$_POST[diagnosa]','$_POST[penyakit]','$_POST[tindakan]','$_POST[nama_kamar]')");
+		mysqli_query($konek,"INSERT INTO diagnosa values ('$_POST[id_diagnosa]','$_POST[id_pasien]','$_POST[diagnosa]','$_POST[penyakit]','$_POST[tindakan]','$_POST[id_kamar]')");
 		header('location:../../home.php?module='.$module);
 	}
 

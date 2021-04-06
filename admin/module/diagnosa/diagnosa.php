@@ -6,7 +6,7 @@ switch ($_GET[act]) {
 	default:
 		// Tampil Data - mengambil file adminshow.php
 		echo "<a href='?module=diagnosa&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg'></i> Tambah</a>
-		<table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='150%'>
+		<table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='130%'>
 		 <thead>
 			<tr>
 				<th>NO</th> <th>Nama Pasien</th> <th>Diagnosa</th> <th>Penyakit</th> <th>Tindakan</th> <th>Kamar</th> <th>Aksi</th>
@@ -57,11 +57,11 @@ switch ($_GET[act]) {
                 <td>Nama kamar</td> 
                 <td><select name=id_kamar class='form-control'>
                         <option value='null'>Silahkan Pilih kamar </option>";
-		$data = mysqli_query($konek, "SELECT * FROM kamar");
-		while ($r = mysqli_fetch_array($data)) {
-			echo "<option value='$r[id_kamar]'> $r[nama_kamar]</option>";
-		}
-		echo "</select>
+						$data = mysqli_query($konek, "SELECT * FROM kamar");
+						while ($r = mysqli_fetch_array($data)) {
+							echo "<option value='$r[id_kamar]'> $r[nama_kamar]</option>";
+						}
+						echo "</select>
                 </td>
                 </tr>
 				<tr>
@@ -78,10 +78,10 @@ switch ($_GET[act]) {
 		// Edit Data - memanggil file pasieneditfm.php
 	case "edituser":
 
-		$data = mysqli_query($konek, "SELECT * FROM diagnosa where id_diagnosa='$_GET[id]'");
+		$data = mysqli_query($konek, "SELECT * FROM diagnosa inner join pasien on pasien.id_pasien=diagnosa.id_pasien where id_diagnosa='$_GET[id]'");
 		$r = mysqli_fetch_array($data);
 
-		echo "<form action='$aksi?module=pasien&act=update' method='POST'>
+		echo "<form action='$aksi?module=diagnosa&act=update' method='POST'>
 			<table class='table table-striped table-bordered'>
 				<tr>
 					<td>ID Diagnosa</td> 
@@ -94,21 +94,19 @@ switch ($_GET[act]) {
                 <td>Nama Pasien</td> 
                 <td><select name=id_pasien class='form-control'>
                         <option value='null'>Silahkan Pilih Pasien </option>";
-		$data = mysqli_query($konek, "SELECT * FROM pasien");
-		while ($r = mysqli_fetch_array($data)) {
+	
 			echo "<option value='$r[id_pasien]'> $r[nama_pasien]</option>";
-		}
 		echo "</select>
                 </td>
                 </tr>
                 <tr>
-               		<td>Diagnosa</td> <td><input  class='form-control' type=text name='diagnosa' value=$r[diagnosa]></td>
+               		<td>Diagnosa</td> <td><input  class='form-control' type=text name='diagnosa' value='$r[diagnosa]'></td>
                 </tr>
                 <tr>
-                    <td>Penyakit</td> <td><input  class='form-control' type=text name=penyakit value=$r[penyakit]></td>
+                    <td>Penyakit</td> <td><input  class='form-control' type=text name=penyakit value='$r[penyakit]'></td>
                 </tr>
                 <tr>
-                    <td>Tindakan</td> <td><input  class='form-control' type=text name=tindakan value=$r[tindakan]></td>
+                    <td>Tindakan</td> <td><input  class='form-control' type=text name=tindakan value='$r[tindakan]'></td>
                 </tr>
                 <tr>
                 <td>Nama kamar</td> 

@@ -58,17 +58,17 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
 
             <!-- menu profile quick info -->
             <?php
-                $query = mysqli_query($konek, "SELECT * FROM dokter WHERE username = '".$id."'");
+                $query = mysqli_query($konek, "SELECT * FROM admin WHERE username = '".$id."'");
                 $data = mysqli_fetch_array($query);
                 // menghitung data dokter
                
             ?>
             <div class="profile clearfix">
                <div class="profile_pic">
-                <img src="build/images/dokter/<?php echo $data['foto']; ?>" width='150px' >
+                <img src="build/images/admin/<?php echo $data['foto']; ?>" width='150px' >
                 <div class='profile_info'>
                 <span>Welcome,</span>
-                <h2><?php echo $data['nama_lengkap']; ?></h2>
+                <h2><?php echo $data['nm_lengkap']; ?></h2>
                 </div>
                 </div>
              
@@ -121,7 +121,7 @@ if(isset($_COOKIE['username']) && $_COOKIE['username'] != ''){
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                  <img src="build/images/dokter/<?php echo $data['foto']; ?>"><?php echo $data['nama_lengkap']; ?>
+                  <img src="build/images/admin/<?php echo $data['foto']; ?>"><?php echo $data['nm_lengkap']; ?>
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item"  href="javascript:;"> Profile</a>

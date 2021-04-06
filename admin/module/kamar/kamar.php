@@ -7,7 +7,7 @@ $aksi="module/kamar/aksi_kamar.php";
 	default:
 		// Tampil Data - mengambil file kamarshow.php
 		echo"<a href='?module=kamar&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg'></i> Tambah</a>
-		<table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='150%'>
+		<table cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='130%'>
 		 <thead>
 			<tr>
 				<th>NO</th> <th>Kode Kamar</th> <th>Nama Kamar</th> <th>Tipe Kamar</th> <th>Harga</th> <th>Aksi</th>
@@ -39,6 +39,7 @@ $aksi="module/kamar/aksi_kamar.php";
 				<tr>
 				<td>Tipe Kamar</td>
 				<td>
+					<input type=radio name=tipe_kamar value=VVIP checked>VVIP
 					<input type=radio name=tipe_kamar value=VIP checked>VIP
 					<input type=radio name=tipe_kamar value=Reguler checked>Reguler
 					
@@ -76,6 +77,7 @@ $aksi="module/kamar/aksi_kamar.php";
 				<tr>
 				<td>Tipe Kamar</td>
 				<td>
+					<input type=radio name=tipe_kamar value=VVIP checked>VVIP
 					<input type=radio name=tipe_kamar value=VIP checked>VIP
 					<input type=radio name=tipe_kamar value=Reguler checked>Reguler
 				</td>

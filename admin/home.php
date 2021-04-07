@@ -193,6 +193,7 @@
                <?php
                 include 'content.php';
                 ?>
+                <img src="about.jpg"> 
              </div>
            </div>
          </div>

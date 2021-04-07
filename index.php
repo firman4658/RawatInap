@@ -345,7 +345,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Doctors</h2>
+          <h2>Dokter</h2>
           <p>Nama Dokter Spesialis di Rumah Sakit Rawat Inap</p>
         </div>
 

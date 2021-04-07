@@ -1,29 +1,10 @@
 # RawatInapadmin
 
 ----------------------------------------------------
-nama
-alamt
-jenis kl
-pekerjaan
-status 
-agama
-no.tlp
-ttl
-tgl masuk
-no rekam medis (00-00-01)
-asuransi
-----------------------------------------------------
+Nama Programmer : 
+1. Aswar Sumarlin : no.hp{087-886-576-650}, ig{aswar_sumarlin}, url{http://aswar12.github.io}
+2. Firmansyah     : no.hp{0895-3247-85137}, ig{firmann_fir}
 
-kamar
-VVIP-vip-reguler 
+thanks u very much >_<
 
-----------------------------------------------------
-
-pembayaran biaya perminggu 
-
-fatimah kamar reguler selama 14 hari  500.000 (sakit jantung, operasi, biayanya 35.000.000 ) = 35.500.000
-bpjs=lunas(potongan di BPJS)
-jamkesmas=(lunas=BPJS)
-reguler=35.500.000
-----------------------------------------------------
-dokter tidak boleh menambahkan dokter.
+ditunggu orderan selanjutnya;

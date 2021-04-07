@@ -17,9 +17,9 @@ switch ($_GET['act']) {
 		while ($r = mysqli_fetch_array($data)) {
 			$no++;
 			echo "<tr>
-				<td>$no</td> <td>$r[username]</td> <td>$r[nm_lengkap]</td> <td>$r[password]</td> <td><img src=build/images/admin/$r[foto] width= 80px></td> 
+				<td>$no</td> <td>$r[username]</td> <td>$r[nm_lengkap]</td> <td>$r[password]</td> <td><img src=build/images/dokter/$r[foto] width= 80px></td> 
 				<td> 
-					<a href='?module=admin&act=edituser&id=$r[username]' > <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true' onclick = 'return confirm('Yakin Data Akan Dihapus');'></i> </a> | 
+					<a href='?module=admin&act=edituser&id=$r[username]' onclick='return confirm('Hapus Data Ini ?');' > <i class='fa fa-pencil-square-o fa-2x' aria-hidden='true' onclick = 'return confirm('Yakin Data Akan Dihapus');'></i> </a> | 
 					<a href='$aksi?module=admin&act=hapus&id=$r[username]'> <i class='fa fa-trash-o fa-2x' aria-hidden='true'></i> </a>
 				</td>
 			</tr>";

@@ -47,8 +47,7 @@
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="#">Fatimah@gmail.com</a>
-        <i class="icofont-phone"></i> +6285-xxxx-xxxx
+        <i class="icofont-envelope"></i> <a href="#">kelompok11@gmail.com</a>
         <i class="icofont-google-map"></i> STIKES PANAKUKANG
       </div>
       <div class="social-links">

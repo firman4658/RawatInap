@@ -1,11 +1,11 @@
  <?php
   // error_reporting(0);
   include '../config/koneksi.php';
-  session_start();
-
-  if (isset($_COOKIE['username']) && $_COOKIE['username'] != '') {
+  session_start();;
+  $level = $_SESSION['level'];
+  if (isset($_COOKIE['username'])  && $_COOKIE['username'] != '') {
     $id = $_COOKIE['username'];
-  } else if (isset($_SESSION['username']) && $_SESSION['username'] != '') {
+  } else if (isset($_SESSION['username'])  && $_SESSION['username'] != '') {
     $id = $_SESSION['username'];
   } else {
     header('location: index.php');
@@ -82,24 +82,17 @@
              <div class="menu_section">
                <h3>Menu</h3>
                <ul class="nav side-menu">
-                 <li><a href="?module=admin" class="nav-link"><i class="fa fa-home"></i> Admin </span></a>
 
-                 </li>
-                 <li><a href="?module=dokter" class="nav-link"><i class="fa fa-user-md"></i> Dokter </span></a>
+                 <?php
+                  echo $level;
+                  if ($level == "admin") {
+                    include 'sidebar/admin.php';
+                  } elseif ($level == "dokter") {
+                    include 'sidebar/dokter.php';
+                  }
 
-                 </li>
-                 <li><a href="?module=pasien" class="nav-link"><i class="fa fa-users"></i> Pasien</a>
 
-                 </li>
-                 <li><a href="?module=kamar" class="nav-link"><i class="fa fa-bed"></i> Kamar </a>
-                 </li>
-
-                 <li><a href="?module=diagnosa" class="nav-link"><i class="fa fa-stethoscope"></i> Diagnosa</a>
-                 </li>
-
-                 <li><a href="?module=pembayaran" class="nav-link"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Pembayaran </a>
-                 </li>
-
+                  ?>
              </div>
 
            </div>

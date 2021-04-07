@@ -1,3 +1,7 @@
+<?php
+  error_reporting(0);
+  include 'config/koneksi.php';
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +65,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html"> <img src="admin/build/images/logonobg.png" style="margin-left: 4px;" sizes="50px"> P. Rawat Inap</a></h1>
+      <h1 class="logo mr-auto"><a href="index.php"> <img src="admin/build/images/logonobg.png" style="margin-left: 4px;" sizes="50px"> P. Rawat Inap</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -187,32 +191,44 @@
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
               <i class="icofont-doctor-alt"></i>
-              <span data-toggle="counter-up">85</span>
-              <p>Doctors</p>
+              <span data-toggle="counter-up"> <?php
+                $data2 = mysqli_query($konek, "SELECT * FROM dokter");
+                $jmlh_dokter = mysqli_num_rows($data2);
+                echo $jmlh_dokter; ?></span>
+              <p>DOKTER</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div class="count-box">
               <i class="icofont-patient-bed"></i>
-              <span data-toggle="counter-up">18</span>
-              <p>Departments</p>
+              <span data-toggle="counter-up"> <?php
+                $data3 = mysqli_query($konek, "SELECT * FROM kamar");
+                $jmlh_kamar = mysqli_num_rows($data3);
+                echo $jmlh_kamar; ?></span>
+              <p>KAMAR</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="icofont-laboratory"></i>
-              <span data-toggle="counter-up">8</span>
-              <p>Research Labs</p>
+              <span data-toggle="counter-up"> <?php
+                $data2 = mysqli_query($konek, "SELECT * FROM pasien");
+                $jmlh_pasien = mysqli_num_rows($data2);
+                echo $jmlh_pasien; ?></span>
+              <p>PASIEN</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="icofont-award"></i>
-              <span data-toggle="counter-up">150</span>
-              <p>Awards</p>
+              <span data-toggle="counter-up"> <?php
+                $data2 = mysqli_query($konek, "SELECT * FROM pembayaran");
+                $jmlh_pem = mysqli_num_rows($data2);
+                echo $jmlh_pem  ; ?></span>
+              <p>TRANSAKSI</p>
             </div>
           </div>
 
@@ -226,56 +242,32 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Pelayanan</h2>
+          <p>Rumah Sakit Rawat Inap, melayani beberapa hal sebagai berikut : </p>
         </div>
 
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
               <div class="icon"><i class="icofont-heart-beat"></i></div>
-              <h4><a href="">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4><a href="">Kesehatan</a></h4>
+              <p>Memberikan pengetahuan tentang kesehatan dan memberikan tips-tips</p>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-drug"></i></div>
-              <h4><a href="">Sed ut perspiciatis</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-dna-alt-2"></i></div>
-              <h4><a href="">Magni Dolores</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
               <div class="icon"><i class="icofont-heartbeat"></i></div>
-              <h4><a href="">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              <h4><a href="">Diagnosa</a></h4>
+              <p>Mendiagnosa penyakit pasien yang diderita. Kemudian melakukan Rawat Inap.</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="icon-box">
               <div class="icon"><i class="icofont-disabled"></i></div>
-              <h4><a href="">Dele cardo</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box">
-              <div class="icon"><i class="icofont-autism"></i></div>
-              <h4><a href="">Divera don</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+              <h4><a href="">Sehat</a></h4>
+              <p>Pasien diberikan pelayanan terbaik, hingga sembuh.</p>
             </div>
           </div>
 
@@ -320,7 +312,7 @@
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>Covid-19</h3>
                     <p class="font-italic">Coronavirus atau virus corona merupakan keluarga besar virus yang menyebabkan infeksi saluran pernapasan atas ringan hingga sedang, seperti penyakit flu.</p>
-                    <p>Khusus untuk COVID-19, masa inkubasi belum diketahui secara pasti. Namun, rata-rata gejala yang timbul setelah 2-14 hari setelah virus pertama masuk ke dalam tubuh. Di samping itu, metode transmisi COVID-19 juga belum diketahui dengan pasti.</p>
+                    <p>Namun, rata-rata gejala yang timbul setelah 2-14 hari setelah virus pertama masuk ke dalam tubuh. Di samping itu, metode transmisi COVID-19 juga belum diketahui dengan pasti.</p>
                     <a href="https://www.klikdokter.com/penyakit/coronavirus"> <i>lanjut baca</i></a>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
@@ -363,19 +355,20 @@
                     <a href="https://www.alodokter.com/diabetes"> <i>lanjut baca</i></a>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
+                    <img src="assets/img/dia.jpg" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>
               <div class="tab-pane" id="tab-5">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Est eveniet ipsam sindera pad rone matrelat sando reda</h3>
-                    <p class="font-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                    <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
+                    <h3>Tipes</h3>
+                    <p class="font-italic">Tifus (tipes) atau demam tifoid adalah penyakit yang terjadi karena infeksi bakteri Salmonella typhi yang menyebar melalui makanan dan minuman yang telah terontaminasi.</p>
+                    <p> Penyakit yang banyak terjadi di negara-negara berkembang dan dialami oleh anak-anak ini dapat membahayakan nyawa jika tidak ditangani dengan baik dan secepatnya.</p>
+                    <a href="https://www.halodoc.com/kesehatan/tifus"> <i>lanjut baca</i></a>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-5.jpg" alt="" class="img-fluid">
+                    <img src="assets/img/ti.jpg" alt="" class="img-fluid">
                   </div>
                 </div>
               </div>

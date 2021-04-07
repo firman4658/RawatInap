@@ -7,11 +7,14 @@ if (empty($_SESSION['username']) AND empty ($_SESSION['password'])) {
 else{
 
 	include "../../../config/koneksi.php";
-	$module=$_GET[module];
-	$act=$_GET[act];
+	$module=$_GET['module'];
+	$act=$_GET['act'];
 
 	//hapus memanggil file admindel.php
 	if ($module=='admin' AND $act=='hapus'){
+		echo '<script language="javascript" type="text/javascript">
+		alert("data berhasil di hapus!");</script>';
+		echo "<meta http-equiv='refresh' content='2; url=index.php'>";
 		mysqli_query($konek,"delete from admin where username='$_GET[id]'");
 		header('location:../../home.php?module='.$module);
 	}
@@ -29,4 +32,3 @@ else{
 		header('location:../../home.php?module='.$module);
 	}
  }
-?>

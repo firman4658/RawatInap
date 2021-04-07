@@ -62,10 +62,12 @@
             if ($level == "admin") {
               $query = mysqli_query($konek, "SELECT * FROM admin WHERE username = '" . $id . "'");
               $data = mysqli_fetch_array($query);
+              $nama = $data['nm_lengkap'];
               // menghitung data dokter
-            } else {
+            } elseif ($level == "dokter") {
               $query = mysqli_query($konek, "SELECT * FROM dokter WHERE username = '" . $id . "'");
               $data = mysqli_fetch_array($query);
+              $nama = $data['nama_lengkap'];
             }
             ?>
            <div class="profile clearfix">
@@ -73,7 +75,7 @@
                <img src="build/images/dokter/<?php echo $data['foto']; ?>" width='150px'>
                <div class='profile_info'>
                  <span>Welcome,</span>
-                 <h2><?php echo $data['nm_lengkap']; ?></h2>
+                 <h2><?php echo $nama; ?></h2>
                </div>
              </div>
 
@@ -115,7 +117,7 @@
              <ul class=" navbar-right">
                <li class="nav-item dropdown open" style="padding-left: 15px;">
                  <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                   <img src="build/images/dokter/<?php echo $data['foto']; ?>"><?php echo $data['nm_lengkap']; ?>
+                   <img src="build/images/dokter/<?php echo $data['foto']; ?>"><?php echo $nama; ?>
                  </a>
                  <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                    <a class="dropdown-item" href="javascript:;"> Profile</a>
@@ -259,6 +261,7 @@
        $('#rawat').DataTable();
      });
    </script>
+   <script src="build/js/sweetalert.min.js"></script>
  </body>
 
  </html>

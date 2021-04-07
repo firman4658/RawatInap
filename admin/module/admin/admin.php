@@ -6,7 +6,7 @@ switch ($_GET['act']) {
 	default:
 		// Tampil Data - mengambil file adminshow.php
 		echo "<a href='?module=admin&act=tambahuser' class='nav-link text-black'><i class='fa fa-plus-circle fa-lg' ></i> Tambah</a>
-		 <table align='left' cellpadding='5px' id='rawat' class='table table-striped jambo_table bulk_action table-bordered align-middle' cellspacing='0' width='130%'>
+		 <table align='left' cellpadding='5px'  class='table table-striped jambo_table bulk_action table-bordered cellspacing='0' width='130%'>
 		 <thead>
 			<tr>
 				<th>NO</th> <th>Username</th> <th>Nama Lengkap</th> <th>Password</th> <th>Foto</th> <th>Aksi</th>

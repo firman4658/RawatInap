@@ -70,7 +70,7 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
+          <li class="active"><a href="#">Home</a></li>
           <li><a href="#services">Pelayanan</a></li>
           <li><a href="#Info">Informasi Penyakit</a></li>
           <li><a href="#doctors">Dokter</a></li>
@@ -79,7 +79,7 @@
         </ul>
       </nav><!-- .nav-menu -->
 
-      <a href="admin/index.php" class="appointment-btn scrollto">Login Admin</a>
+      <a href="admin/index.php" class="appointment-btn scrollto">Login </a>
 
     </div>
   </header><!-- End Header -->
@@ -89,7 +89,7 @@
     <div class="container">
       <h1>P.Rawat Inap</h1>
       <h2>Sistem Pelayanan Rawat Inap Berbasis Web php & mysql</h2>
-      <a href="#about" class="btn-get-started scrollto">Info</a>
+  
     </div>
   </section><!-- End Hero -->
 
